@@ -1,0 +1,986 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage{fullpage}
+%\setlength{\parindent}{0in}
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage[toc,page]{appendix}
+\usepackage{dcolumn}
+\usepackage{arydshln}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+
+\usepackage{setspace}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[format=plain, justification=raggedright,singlelinecheck=false]{caption}
+\usepackage[symbol*]{footmisc}
+
+\makeatletter
+\renewcommand\@biblabel[1]{}
+\renewenvironment{thebibliography}[1]
+     {\section*{\refname}%
+      \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+      \list{}%
+           {\leftmargin0pt
+            \@openbib@code
+            \usecounter{enumiv}}%
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+\makeatother
+
+
+\begin{document}
+\begin{center} {\Large \textbf{Fiscal Policy Under Decentralized Federalism: \\}} \smallskip
+{\large {\textbf{Implications for Liquidity Trap Management}}} \\ \bigskip
+\end{center}
+\begin{center} Andrew Fieldhouse\footnote{Department of Economics, Cornell University. Email: ajf263@cornell.edu. All errors are mine alone. \label{fnlabel}}  \\ \smallskip
+Cornell University \\ \bigskip
+\today \\ \bigskip \bigskip
+\textbf{Abstract} \\ \smallskip
+\end{center}
+
+This paper develops a general equilibrium model with vertically decentralized fiscal federalism, modeled after the United States, to analyze the implications of restrictions on fiscal instruments and endogenous sub-federal policy responses for liquidity trap stabilization policy. Unconventional fiscal policy, which mimics inflation with an upward path of consumption taxes, can be implemented with additional readjustment of intergovernmental transfers under full policy coordination, but ceases to be implementable when the federal or sub-federal government plays Stackelberg leader in a non-cooperative game. Implications for conventional stabilization policy vary markedly across the available endogenous sub-federal policy responses induced by borrowing budget constraints. A mixed policy response calibrated to states' discretionary fiscal response to budgetary shortfalls during Great Recession induces a federal spending multiplier of \$1.34, 5\% higher than spending multipliers under centralized government, and a transfer multiplier of \$1.13. Both increased federal spending and increased federal transfers are welfare-improving in a liquidity trap, with slightly higher gains from spending. \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip
+
+\pagebreak
+
+\section{Introduction}
+
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\setcounter{footnote}{0}
+
+While the fully unified models of government budget constraints and fiscal instruments prevalent in macroeconomic general equilibrium models serve as an apt lens for policy analysis in highly centralized models of fiscal federalism, the mix of stabilization policies used in more diffuse arrangements of federalism cannot be analyzed under such modeling. For highly decentralized models of government, such as that of the United States, additional complications arise from restricted availability of policy instruments, directional restrictions on fiscal instruments, vertical tax, pecuniary, and demand externalities channelled through a common tax base, policy coordination issues, strategic games between levels of government, and binding sub-federal borrowing constraints. Additional transfers from the U.S. federal government to the states has become an increasingly utilized stabilization policy in recent decades, enacted on an unprecedented scale during the Great Recession, but the efficacy of such policies remain largely unexplored and can't be studied in unified models of federalism. 
+
+This paper develops a general equilibrium model with vertically decentralized fiscal federalism, modeled after the United States, to analyze the implications of restrictions on fiscal instruments and endogenous sub-federal policy responses for stabilization policy when a preference shock induces a liquidity trap and the zero lower bound for nominal interest rate binds. It analyzes how the decentralization of fiscal instruments and government budget constraints, and related legal restrictions on their use, complicates the implementability of the unconventional fiscal policy developed by Correia et al. (2013), in which a second-best allocation can be achieved by mimicking inflation with an upward path of consumption taxes. Unconventional fiscal policy can be implemented under full policy coordination---ignoring a plethora of otherwise interfering state-level constitutional and statutory restrictions on tax rate and revenue increases---but requires an additional readjustment of federal transfers to lower levels of government, and the optimal stabilization role ceases to be fully centralized. When either the federal or sub-federal government plays Stackelberg leader in a non-cooperative game, however, unconventional fiscal policy ceases to be implementable. 
+
+By collapsing the federal, state, and local government budget constraints into a unified budget constraint with only a natural borrowing limit constrained by the tax Laffer curve, macroeconomic models miss how a  preference shock inducing a liquidity trap can trigger propagating shocks in the form of endogenous state and local government (SLG) discretionary budget cuts and tax rate increases. When borrowing constraints bind, forcing state and local governments to reduce expenditures or increase tax rates relative to steady state levels, standard macroeconomic models will typically understate government spending multipliers at the federal level, as increased spending boosts a shared tax base, easing the degree of sub-federal fiscal retrenchment. As Bi, Leeper, and Leith (2013) stress, output responses vary widely with the composition of endogenous fiscal consolidations in the aftermath of adverse fiscal shocks. That paper, however, focuses on unified models of fiscal authorities and timing uncertainty of fiscal adjustments inapplicable to the models below.
+
+Relative to a benchmark New-Keynesian liquidity trap model with full fiscal centralization, federal government spending multipliers are elevated when sub-federal spending or consumption taxes respond endogenously, but lowered when sub-federal labor income taxes respond. Federal transfer multipliers are higher when sub-federal spending responds, lower when consumption taxes respond, and turn negative when sub-federal labor income taxes respond. A mixed policy response calibrated to states' discretionary fiscal response to substantial budgetary shortfalls during Great Recession induces a federal spending multiplier of \$1.34, 5\% higher than spending multipliers under centralized government, and a lesser transfer multiplier of \$1.13. Increasing federal spending and transfer grants are both welfare-improving in a liquidity trap, with slightly higher gains from spending. Federal transfers produce higher welfare gains if they can be accompanied by restrictions on sub-federal spending cuts. 
+
+These implications of vertically decentralized federalism are particularly relevant to understanding the U.S. experience in the Great Recession---in which endogenous sub-federal fiscal tightening largely offset federal fiscal expansion and helped propagate aggregate demand and deleveraging shocks---and analyzing the efficacy of federal policy responses.
+
+
+
+\bigskip
+
+This paper explores the conduct of optimal fiscal policy at the zero lower bound of nominal interest rates,  incorporating positive insights regarding the vertically decentralized structure of U.S. federalism into New-Keynesian DSGE models. As such, this paper builds upon the literature on optimal fiscal policy in liquidity traps while drawing upon the fiscal federalism literature. The paper also compliments an emergent empirical literature estimating federal spending and transfers multipliers exploiting exogenous variation in time series or cross-sectional variation in increased transfers during the Great Recession.
+
+Considerable theoretical insight has emerged supporting a positive role for increased government spending as enhancing welfare when the zero lower bound constrains monetary policy.\footnote{See Krugman (1998), Eggertsson and Woodford (2004), Woodford (2011), Christiano, Eichenbaum, and Robelo (2011), Werning (2012), and Farhi and Werning (2013), among others.} This paper builds from a prototypical New-Keynesian DSGE model with sticky prices used in Christiano, Eichenbaum, and Robelo (2011), which Correia et al. (2013) also use as the basis for their computational analysis of unconventional fiscal policy. Correia et al. (2013) establish circumstances under which a revenue-neutral realignment of tax policy can perfectly mimic the requisite inflationary path---through a combination of increased consumption taxes and decreased labor income taxes---to achieve a first or second best constrained allocation without inefficient government spending increases. Nesting a stylized model of U.S. fiscal federalism into their unconventional fiscal policy model for liquidity trap management, this paper  demonstrates that such a readjustment of taxes either cannot be implemented because of fiscal instrument decentralization and legal constraints, or implementation requires additional intergovernmental transfer adjustments, depending on game theoretic assumptions. 
+
+In nesting a layered system of federal, state, and local government in macroeconomic models with unified fiscal authorities, this paper draws on the vast literature on fiscal federalism---the understanding of the functioning of multilevel government and interrelations between levels. In his classic treatise on fiscal federalism, Oates (1972) advances the case for apportioning the role of stabilization policy to the federal level, in part because states will fail to internalize aggregate demand spillovers to other jurisdictions. When fiscal policy improves welfare, this federalized role for conducting stabilization policy remains widely accepted. But the implications for federal stabilization policy stemming from a diffuse structure of fiscal federalism, a decentralized subset of policy tools, and related legal policy constraints remains unexplored in the fiscal federalism literature. Federal transfer policy falls in a grey area between stabilization policy at the federal and sub-federal levels, resulting from a principal-agent problem (Carlino and Inman 2014).
+
+The fiscal federalism literature's study of intergovernmental lump-sum and matching grants has largely focused on achieving optimal provision of local public goods by correcting for uninternalized spillover externalities (Gordon 1983), ignoring stabilization policy altogether.\footnote{The early seminal work in fiscal federalism predates the use of transfer stabilization policy and much of the stark rise in the flow of U.S. transfers connecting levels of government (e.g., Samuelson (1954), Musgrave (1959), Arrow (1970), and Oates (1972)). See Appendix B.} More in the spirit of this paper, Carlino and Inman (2013) study the ability of U.S. states and regions to stabilize their own economies, providing empirical evidence that significant spillovers and free-riding concerns support centralizing stabilization policy. 
+
+This paper also relates to the literature on vertical tax externalities arising from multiple levels of government sharing overlapping tax bases (Boadway and Keen 1996, Keen 1998), albeit operating through a different channel: Binding budget constraints transmit vertical tax externalities to to vertical aggregate demand and pecuniary externalities when the zero lower bound constrains monetary policy, elevating federal spending and transfer multipliers.
+
+Holtz-Eakin, Rosen, and Tilly (1994) find that contemporaneous resources primarily determine state and local government expenditure levels, suggesting that states and localities engage in relatively little consumption smoothing, despite some varying flexibility in skirting balanced budget amendments---supporting this paper's premise that binding sub-federal borrowing constraints can propagate adverse fiscal shocks to aggregate demand.
+
+Both the theoretical and empirical literature on the positive role for government \textit{spending} has blossomed in recent years, but Oh and Reis (2012) stress that the focus of this research has been misaligned with the actual policy responses throughout the advanced economies, which have been heavily tilted toward transfers. Their paper, however, focuses on the positive effect of transfers to households, while ignoring transfers between levels of government by adopting a unified model of the fiscal authority.
+
+Carlino and Inman (2014) provide the ``first fully integrated analysis of the macroeconomic effects of intergovernmental transfers," the most relevant empirical benchmark for this paper's theoretical analysis of transfer multipliers. They take a two-pronged approach to estimating fiscal multipliers for federal transfers to state governments: An SVAR using timing restrictions, \`a la Blanchard and Perotti (2002), and a narrative VAR based on Ramey (2011), using their accompanying narrative analysis of 23 changes in federal transfers to state governments (Carlino and Inman 2013b). They find the aggregate multiplier on intergovernmental transfers never exceeds \$0.8 when ignoring the distinction between welfare aid and project aid (a distinction absent in this paper). This paper's preferred model generates transfer multipliers of \$0.85 above the zero lower bound, in line with their estimates.
+
+But caution is merited in interpreting their or other time series analyses with respect to liquidity trap environments. Estimates of transfer or spending multipliers based on pre-Great Recession expenditure shocks miss the considerable altering effects of the zero lower bound constraint, and evidence cannot be mixed across these two states (Christiano, Eichenbaum, and Rebelo 2011). Further, time series estimates of transfer multipliers likely miss the implications of the rising prevalence and stringency of state balanced budget requirements, as well as the unusual degree of sub-federal fiscal distress and related consolidation stemming from the severity and prolonged nature of the Great Recession.
+ 
+This paper also compliments a host of empirical public finance and macroeconomic analyses of federal transfers to states and U.S. policy changes during the Great Recession. Wilson (2012) and Chodorow-Reich et al. (2012) exploit cross-sectional geographic variation in increased transfer grants from the American Recovery and Reinvestment Act of 2009 (ARRA), but reach starkly different conclusions regarding the efficacy of federal transfers. Wilson (2012) estimates that every \$125,000 in ARRA grant funds generated one job, whereas Chodorow-Reich et al. (2012) estimate that every \$100,000 in increased Medicaid matching rates yielded an additional 3.8 job years. 
+
+Shoag (2010, 2013) uses exogenous `windfall' shocks to state pension returns to estimate state-level government spending multipliers, finding that one additional job was generated for every \$35,0000 before the Great Recession versus \$22,000 during the Great Recession. Shoag (2013) also reinforces the transmission of contemporaneous state resources to spending found by Holtz-Eakin, Rosen, and Tilly (1994), as pension losses lead to sizable changes in expenditure, with little consumption smoothing behavior exhibited. Farhi and Werning (2012) caution, however, that windfall multipliers may be substantially different than other multipliers in New-Keynesian models.
+
+Lastly, this paper compliments the emerging literature on fiscal policy in currency unions and open economy models, particularly those motivated by the eurozone crisis. But this paper is deliberately tailored to a model of vertically stacked U.S. fiscal federalism fundamentally unlike the more horizontal fiscal structure European Monetary Union (EMU). The absence of a supranational European fiscal union---particularly one tasked with a stabilization policy role---and complete control over all relevant policy levers retained at the national level by member countries are stark differences. Keen (1998) warns against drawing tax policy lessons between the U.S. and the EMU because ``the presence or absence of a federal government may... make a more profound differences in the analysis of tax policy than seems to be recognized," an insight paralleled in this paper with respect to vertical tax and aggregate demand externalities. Short of being locked out of financial markets, sovereign nations in the EMU and their subsidiary subnational governments are constrained by nothing comparable to the balanced budget requirements and tax and expenditure limitations that U.S. states have imposed upon themselves---as evidenced by  considerably less pro-cyclical subnational policy responses across Europe during the Great Recession (Jonas 2012).
+
+Farhi and Werning (2013) compare government spending multipliers across prototypical liquidity trap and currency union models, finding that fiscal multipliers are lower in a currency union because the inflationary effect of government spending is confined to domestically produced goods, spurring a loss of competitiveness and worsening terms of trade. While apropos of fiscal transfers across horizontal member states of a currency union---particularly the horizontally decentralized EMU---their model is an inappropriate lens for analyzing \textit{vertical} U.S. transfer policy. In a similar vein, Nakamura and Steinsson (2013) estimate an ``open economy relative multiplier" of 1.5 for currency unions based on a geographical time series of U.S. military procurement. Regional-specific internal revaluations of currency union member states' real exchange rate are driving these results. Consequently, these are apt models for understanding the impact of an idiosyncratic fiscal shock to one state or territory, such as a military base closure or possible fiscal relief for Puerto Rico, but are broadly inapplicable to a deficit-financed policy simultaneously increasing transfers to all 50 states, particularly when that debt is the collective liability of all residents, as was the case for ARRA and other recent transfer stabilization policies (see Carlino and Inman 2013b). 
+
+\bigskip
+
+As Nakamura and Steinsson (2013) note, government spending multipliers are not a deep parameters of macroeconomic models: They vary considerably with modeling, the degree to which monetary policy pushes against the wind, and the calibration of deep parameters. Rather than developing broadly applicable results for currency unions, this paper analyzes the implications of a vertically decentralized model of U.S. fiscal federalism on various fiscal multipliers, unconventional fiscal policy, and conventional optimal fiscal policy in an environment specifically calibrated to the U.S. experience during the Great Recession.  
+
+Section 2 develops a simple, stylized model of vertically decentralized fiscal federalism nested in a prototypical New-Keynesian DSGE liquidity trap model. Section 3 analyzes how the unconventional fiscal policy results of Correia et al. (2013) are complicated by its nesting in their model. Section 4 analyzes the welfare implications of fiscal policy levers under vertically decentralized fiscal federalism when the economy is stuck at the zero lower bound and unconventional fiscal policy cannot be implemented. Section 5 concludes.\footnote{Much of the rationale underpinning the assumptions shaping these results can be found in appendices: Appendix A overviews constitutional and statutory restrictions on U.S. fiscal instruments. Appendix B overviews the concurrent rise of U.S. intergovernmental transfer flows and counter-cyclical transfers as fiscal stimulus. Appendix C explains the calibration of fiscal parameters based on the structure and magnitude of the U.S. federal, state, and local government sectors.} 
+
+\section{A Model of Decentralized Fiscal Federalism}
+In developing a tractable, stylized model of vertically decentralized fiscal federalism, this paper builds from a prototypical New-Keynesian DSGE model with sticky prices and capital in Christiano, Eichenbaum, and Robelo (2011), which Correia et al. (2013) also adopt as the basis for their computational analysis of unconventional fiscal policy. The nested model of fiscal decentralization elucidates the implications of endogenous sub-federal policy feedback effects and vertical externalities for the relative efficacy of federal spending, federal transfers to states, and sub-federal spending. Fiscal consolidation policies can produce either inflationary or deflationary pressure in a liquidity trap: When borrowing constraints bind, the effect of federal transfers to states on output vary widely with the endogenous sub-federal policy response to an economic shock reducing revenues. Fiscal multipliers are first studied under the strong assumption (later relaxed) that endogenous sub-federal fiscal responses are entirely confined, in turn, to spending cuts, consumption tax rate increases, and labor income tax rate increases. There is substantial heterogeneity in the induced vertical aggregate demand and pecuniary externalities. A preferred model of endogenous sub-federal policy responses calibrated to states' realized mix of discretionary fiscal retrenchment during the Great Recession elucidates how countervailing forces balance on net.
+
+\subsection{Benchmark New-Keynesian Model Under Centralization}
+To facilitate comparison with both conventional and unconventional fiscal policy, the benchmark New-Keynesian model under fully centralized fiscal federalism mirrors the model Correia et al. (2013) use to develop unconventional fiscal policy. Their general simulation results (see Section V of that paper) are, in turn, based on a prototypical New-Keynesian DSGE model with sticky prices, capital, and capital adjustment costs, designed to be similar to the model of Christiano, Eichenbaum, and Rebelo (2011).\footnote{For the sake of clarity, the presentation of their model and ensuing extensions to vertically decentralized fiscal federalism differs somewhat from the presentation in Correia et al. (2013). That paper develops a benchmark sticky price New-Keynesian model without capital in Section I, remaining agnostic about the forms for utility, production, and the Taylor rule. They extend the relevant pieces of that model to a model with capital in Section II. To facilitate comparison, the model with capital then largely adopts the functional forms used in Christiano, Eichenbaum, and Rebelo (2011), as well as their calibration of non-fiscal parameters, for the main simulation results presented in Section V. Correia et al. (2013), however,  assume away lump-sum taxes and consider only the first of the two functional forms for capital adjustment used in Christiano, Eichenbaum, and Rebelo (2011), based on Lucas and Prescott (1971). The representation of their model presented here combines these three steps, reflecting the model used in computational simulations, which are based on their publicly available code. Modified code used in this paper is available upon request.} A liquidity trap is engineered by temporarily and sufficiently shocking the discount factor from $\beta$ to $\hat{\beta} > \beta$ for $ 1 \leq t \leq T$ to push the nominal interest rate, which follows a truncated Taylor rule, to that zero bound. 
+
+A representative household maximizes expected utility of the form 
+\begin{align}
+U(C_t, L_t, \xi_t) =  \xi_t \frac{(C_t^\gamma L_t^{1-\gamma})^{1-\sigma} - 1}{1 - \sigma}
+\end{align}
+\noindent discounted by time invariant discount factor, $\beta$, and stochastic discount factor shock, $\xi_t$, which is unity in the steady state, subject to the budget constraint and terminal condition, respectively,\footnote{Hence the discount factor shock inducing the liquidity trap must follow $\beta \frac{\xi_{t+1}}{\xi_t} = \hat{\beta}$ for $t \in \{1,.., T\}$ and $\xi_{t+1} = \xi_t \ \forall \ t \geq T+1$. As in Correia et al. (2013) and Christiano, Eichenbaum, and Rebelo (2011), $\hat{\beta} = 1.01$ and $\beta = 0.99$. See Table 1 for the full calibration of model parameters.}
+\begin{subequations} 
+\begin{align}
+(1 + \tau_t^c)P_t C_t + & P_t I_{t} + E_t Q_{t,t+1} B_{t,t+1} + \frac{1}{1+i_t} \bar{B}_t =  \\ \notag
+  \mspace{150mu}
+ &(1 - \tau_t^n)W_t N_t + (1 - \tau^d_t) \Pi_t + (1- \tau_k) (R_t - P_t \delta)K_t  + T_t + B_{t-1,t} +  \bar{B}_{t-1} \\ 
+  \mspace{150mu}
+& \ \ \ s.t. \ \ \  \underset{T \rightarrow \infty}{\text{lim}} Q_{0,T+1} \bar{B}_T + E_o Q_{0,T+1} B_{T,T+1} \geq 0, 
+\end{align}
+\end{subequations} 
+
+\noindent where $\tau^c$ is a consumption tax, $\tau^n$ is a labor income tax,  $\tau^d$ is the tax rate on profits from production, $\Pi_t$, $\tau^k$ is a tax on capital income net of deductible deprecation costs, $\delta$, and $T_t$ are lump sum transfers, with the restriction $T_t \geq 0$ necessitating distortionary taxation. $B_{t,t+1}$ are state contingent bonds and $\bar{B}_t$ are risk free bonds, both paying one unit of money at time $t+1$. $P_t$ is the aggregate price level, $W_t$ is the aggregate nominal wage rate, and $R_t$ is the aggregate rental rate for capital, and $Q_{t,t+1}$ is the nominal price of state contingent bonds. Aggregates for consumption, prices, investment, and government expenditure across varieties of private consumption goods, $i \in [0,1]$, take the following respective Dixit-Stiglitz aggregator forms governed by the elasticity of substitution between varieties, $\theta > 1$:
+\begin{align}
+C_t &= \big[ \int_0^1 c_{it}^{\frac{\theta-1}{\theta}} di \Big]^{\frac{\theta}{\theta-1}} \\
+P_t &= \big[ \int_0^1 p_{it}^{1-\theta} di \Big]^{\frac{1}{1-\theta}} \\
+I_t &= \big[ \int_0^1 i_{it}^{\frac{\theta-1}{\theta}} di \Big]^{\frac{\theta}{\theta-1}} \\
+G_t &= \big[ \int_0^1 g_{it}^{\frac{\theta-1}{\theta}} di \Big]^{\frac{\theta}{\theta-1}}.
+\end{align}
+
+\noindent Total labor supply, 
+\begin{align}
+N_t = 1 - L_t,
+\end{align}
+is also a composite of labor at each firm, as is capital
+\begin{align}
+N_t &= \int_0^1 n_{it} di \\
+K_t &= \int_0^1 k_{it} di.
+\end{align}
+
+\noindent Imposing the no-arbitrage condition for state contingent and risk-free bonds,
+\begin{align}
+E_t Q_{t,t+1} = \frac{1}{1+i_t},
+\end{align}
+\noindent the household's Euler equation and labor supply optimality conditions, respectively, are 
+\begin{align}
+\frac{U_c (C_t, L_t, \xi_t )}{(1+\tau_t^c)P_t} &= (1+i_t) E_t \Big[ \frac{\beta U_c (C_{t+1}, L_{t+1}, \xi_{t+1})} {(1+\tau_{t+1}^c)P_{t+1}} \Big] \\
+\frac{U_c (C_t, L_t,\xi_t )}{U_L (C_t, L_t, \xi_t )} &= \frac{(1+\tau_t^c)}{(1 - \tau_t^n)} \frac{P_t}{W_t}. 
+\end{align}
+\noindent Adopting the functional form for adjustment costs developed by Lucas and Prescott (1971), the aggregate capital stock evolves according to 
+\begin{align}
+K_{t+1} &= I_t + (1-\delta)K_t - \frac{\sigma_I}{2} \Big(\frac{I_t}{K_t} - \delta \Big)^2 K_t
+\end{align}
+\noindent and the household's marginal arbitrage condition for capital accumulation is governed by
+\begin{align}
+\frac{U_c (C_t, L_t,\xi_t )}{(1+\tau_t^c)} &= E_t \Bigg\{ \frac{\beta U_c (C_{t+1}, L_{t+1}, \xi_{t+1})} {(1+\tau_{t+1}^c)}   \\ \notag & \times \Big[ (1 - \delta) - \frac{\sigma_I}{2} \Big( \frac{I_{t+1}}{K_{t+1}} - \delta \Big)^2  - \sigma_I \Big( \frac{I_{t+1}}{K_{t+1}} - \delta \Big) \frac{I_{t+1}}{K_{t+1}} + \big(1 - \tau_{t+1}^k\big) \frac{R_{t+1}}{P_{t+1}} + \tau_{t+1}^k \delta \Big] \Bigg\}. 
+\end{align}
+
+\noindent Each variety of private consumption good is produced by a monopolist, a fraction $ 1 - \alpha$ of which is able to reset prices each period, as in Calvo (1983). Each firm's production follows the Cobb-Douglas form
+\begin{align}
+y_{it} = A k^{\alpha_F}_{it} n^{1-\alpha_F}_{it}.
+\end{align}
+
+\noindent Firms able to reset prices choose $p_t$ to maximize expected net-of-tax profits
+\begin{align}
+p_{t} = \frac{\theta}{1-\theta} E_t \overset{\infty}{\underset{j=0}{\sum}} \eta_{t,j} \frac{W_{t+j}}{A_{t+j} F_n \Big( \frac{K_{t+j}}{N_{t+j}} \big)}
+\end{align}
+
+\noindent where
+\begin{align}
+\eta_{t,j} &= \frac{(\alpha \beta)^j \frac{(1 - \tau^d_{t+j}) u_c (t+j)}{1 + \tau^C_{t+j}} (P_{t+j})^{\theta - 1} Y_{t+j}}{E_t \overset{\infty}{\underset{j=0}{\sum}} (\alpha \beta)^j \frac{(1 - \tau^d_{t+j}) u_c (t+j)}{1 + \tau^C_{t+j}} (P_{t+j})^{\theta - 1} Y_{t+j}},
+\end{align}
+
+\noindent so the aggregate price level can be written as
+\begin{align}
+P_{t} = [(1-\alpha)p_t^{1-\theta} + \alpha P_{t-1}^{1-\theta}]^{\frac{1}{1-\theta}}.
+\end{align}
+
+\noindent Monetary policy follows a truncated Taylor rule,
+\begin{align}
+i_t &= \text{max}\{Z_t, 0\} \\
+Z_t &= \frac{1}{\beta_t} (1 + \pi_t)^{\phi_1 (1 - \rho_R)} \big( \frac{Y_t}{\bar{Y}} \big) ^{\phi_2 (1 - \rho_R)} [\beta_t(1 + i_{t-1})]^{\rho_R} - 1.
+\end{align}
+
+\noindent Integrating over private goods and firms, goods market clearing reduces to
+\begin{align}
+C_{t} + G_{t} + K_{t+1} - (1-\delta)K_t +  \frac{\sigma_I}{2} \Big(\frac{I_t}{K_t} - \delta \Big)^2 K_t = \Big[ \int_0^1  \Big( \frac{p_{it}}{P_t} \Big) ^{-\theta} di \Big]^{-1} A K_t ^{\alpha_F} N_t ^{1-\alpha_F}. \end{align}
+
+\noindent \textbf{Definition 1: } A competitive equilibrium without lump-sum taxation is an allocation $\{C_t, L_t, N_t, K_t\}$, prices $\{p_t, P_t, W_t, R_t\}$ and policies $\{i_t \geq 0, \tau_t^c, \tau_t^n, \tau_t^k, \tau_t^d,  T_t \geq 0\}$ characterized by equations (7), (10), (11), (12), (14), (16), (17), (18), (21), and the following implementability condition, derived from the household's date-zero net present value budget constraint combined with optimality conditions (11) and (12): 
+\begin{align}
+&E_0 \overset{\infty}{\underset{t=0}{\sum}} \beta^t  \big[ U_c (C_t, L_t, \xi_t ) C_t - U_L (C_t, L_t, \xi_t ) N_t)\big] = E_0 \overset{\infty}{\underset{t=0}{\sum}} \beta^t U_c (C_t, L_t, \xi_t ) \frac{(1 - \tau^d_t) \Pi_t}{(1 + \tau_t^c)P_t}  \\ \notag
+&+ U_c (C_0, L_0, \xi_0 ) \frac{\bar{B}_0 + B_{-1,0}}{(1 + \tau_0^c) P_0} + U_c (C_0, L_0, \xi_0 ) \Big[ \Big( \frac{(1-\delta) + \tau^k_0 \delta}{1+ \tau_0^c} + \frac{(1-\tau_0^k)}{(1+\tau_0^c)} \frac{R_0}{P_0} \Big) K_0 \Big]
+\end{align}
+
+Each period is one quarter. All parameterizations are adopted from Correia et al. (2013) save fiscal parameters, which are taken to be representative of the United States in the two decades up to the Great Recession.\footnote{That paper sets $\Omega^G = 0.2$ and $\bar{\tau}^c = 0.05, \bar{\tau}^k = 0.36, \bar{\tau}^n = 0.28,$ following Drautzburg and Uhlig (2011). To keep (16) comparable to that paper, $\bar{\tau^d} = 0$ as in Correia et al. (2013). Instead imposing $\bar{\tau^d} = 0.277$, the effective average U.S. corporate tax rate (PricewaterhouseCoopers 2011), would increase steady state transfers to $\bar{T} = 0.12 \times \bar{Y}$. These two implied steady state levels for transfers closely bound combined government transfers averaging 10.7\% of potential GDP in the two decades leading up the Great Recession. See Table 1 for parameter calibrations and Appendix C for corresponding motivations for fiscal variables.} The constant steady state consumption tax rate is $\bar{\tau}^c = 0.096$, capital income tax rate is $\bar{\tau}^k = 0.24$, and labor income tax rate is $\bar{\tau}^n = 0.36$. As in Correia et al. (2013), all government revenues exceeding expenditure needs are rebated lump-sum back to the household sector, with the restriction that lump sum taxes are ruled out. The government share is calibrated such that $\Omega^G = 0.22$, so $\bar{G} = 0.22 \times \bar{Y}$. 
+
+Thus the fully centralized government's budget constraint reduces to:
+\begin{subequations} 
+\begin{align}
+G_t &= \tau_n W_t N_t + \tau_c C_t + \tau_k (R_t - \delta) K_t  + \tau^d_t \Pi_t - T_t  \\ 
+& s.t. \ \ \ T_t \geq 0
+\end{align}
+\end{subequations}
+While not directly calibrated, (23a) implies $\bar{T} = 0.08 \times \bar{Y}$ in the steady state, leaving adequate headroom for reductions in transfers to keep (23a) satisfied without violating (23b) when the preference shock reduces the tax base. Because Ricardian equivalence holds in this model, endogenous transfer reductions or fiscal stimulus financed by reducing lump-sum transfers behaves similarly to debt-financed fiscal adjustments in a model with government debt.
+
+As in Correia et al. (2013), $T = 10$, so that the economy starts period $t=0$ in its non-stochastic steady state and at $t=1$ agents learn that the discount factor will be raised from $\beta = 0.99$ to $\hat{\beta} = 1.01$ through period 10. The revised fiscal parameterization leaves the benchmark liquidity trap of Correia et al. (2013) virtually unchanged, with output initially falling roughly 12\% and the zero lower bound binding until the 7th period (See Figure 1). 
+
+\begin{center}
+\includegraphics[scale=0.9]{SYP_F1}
+\end{center}
+
+Unlike the exogenously static level of government expenditure in Correia et al. (2013), we allow for shocks, setting the persistence parameter for of government consumption expenditure to $ \rho_G  = 0.8$, as in Christiano, Eichenbaum, and Rebelo (2011):
+\begin{align}
+\text{log}(G_{t+1}) = (1 - \rho_G)\big(\text{log}(\Omega^G)+\text{log}(\bar{Y})\big) + \rho_G \text{log}(G_t) + \xi_t^G
+\end{align}
+In this benchmark model, exogenously shocking government spending upward by $\xi_0^G = $ 2\% reduces the initial decline in output by 0.6 percentage points. On impact, this omits a traditional government spending multiplier, $m^{G}_b = \frac{dy_1}{dG^F_1} $, of \$1.28, which then drifts downwards and reaches roughly unity as the zero bound ceases to bind (see Table 2 for a comparison of fiscal multipliers.) 
+
+\subsection{Splitting Federal and Sub-Federal Fiscal Authorities}
+The most basic extension of this centralized  government's budget to a more positive model of U.S. fiscal federalism is nesting a unified sub-federal government sector, combining state and local governments as sharing a common tax base with the federal government. Broadly in line with the stylized facts and summary of U.S. federal, state, and local public finances presented in Appendix C, the following structural assumptions are made: The federal government retains control over capital income taxation, a labor income tax, $\tau^{F_n}$, and a corporate income tax, used to finance transfers to households, transfers to state and local government, $T^{F,SF}$, and the provision of a national public good, $G^F$. Transfer grants are legally restricted to flow downward, so the federal government cannot impose lump sum taxes on the sub-federal government (see Appendix A). Congress cannot legislate and implement a federal VAT overnight. The sub-federal government's tax policy instruments include a consumption tax and a labor income tax, $\tau^{SF_n},$ which, along with federal grants, finance the provision a local public good, $G^{SF}$. Sub-federal income taxes are deductible from federal labor income tax liability, but not vice versa.
+
+Thus sub-federal income taxes exert both a direct vertical fiscal externality (decreasing the amount of labor income that is taxable at the federal level, taking labor supply as given) and an indirect vertical fiscal externality (decreasing labor supply), while the federal labor income tax exerts only an indirect vertical tax externality (see Keen 1998).
+
+The respective federal (`F') and sub-federal (`SF') budget constraints separate as:
+\begin{subequations} 
+\begin{align}
+G^F_t &= \tau^{F_n}_t (1 - \tau^{SF_n}_t) W_t N_t + \tau_k (R_t - \delta) K_t + \tau_t^d \Pi_t - T_t - T^{F,SF}_t \\  
+& s.t. \ \ \  T_t \geq 0, \ \ T^{F,SF}_t \geq 0
+\end{align}
+\end{subequations} 
+\begin{align}
+G^{SF}_t &= \tau^{SF_n}_t W_t N_t + \tau_c C_t  + T^{F,SF}_t  
+\end{align}
+Parallel to (23a), all federal government revenues exceeding consumption expenditure needs are rebated back to the household sector, and (25a) again implies $\bar{T} = 0.08 \times \bar{Y}$ in the steady state, enabling reductions in transfers to keep (25a) satisfied without violating (25b) when the tax base shrinks. Federal tax parameters are fixed at their steady state rates.
+
+This model and all subsequent analysis can be replicated identically by modeling federal transfers as matching transfers instead of lump-sum transfers.\footnote{Equations (25a) and (26) could be replaced, respectively,  with $ G^F_t + T^{F,SF}_t G^{SF} = \tau^{F_n}_t (1 - \tau^{SF_n}_t) W_t N_t + \tau_k (R_t - \delta) K_t + \tau_t^d \Pi_t - T_t $ and $(1 - T^{F,SF}_t ) G^{SF}_t = \tau^{SF_n}_t W_t N_t + \tau_c C_t $, where $T^{F,SF}$ is a matching rate subject to $T^{F,SF} \geq 0 $, and all results below would go through.} The distinction between matching and transfer multipliers is important in much of the fiscal federalism literature, because matching grants subsidize the cost of local public goods, pivoting out the budget constraint of the sub-federal government to increase demand and correct for the natural under-provision of local public goods (Oates 1972). In this model, demand for local public goods is taken deterministically as revealed by political preferences aggregated to historical BEA data and the relative mix of discretionary policy actions taken during the Great Recession. Consequently, all sub-federal revenue sources are fully fungible. To whatever extent they circumvent the fungibility of money, any additional restrictions that come with federal transfers of either form---e.g., legislative ``supplement, not supplant" language---must be modeled as an additional constraint.\footnote{The Recovery Act's increases in Medicaid matching grants through the FMAP formula contained supplement, not supplant language to prevent states from cutting back eligibility or services too deeply. This in effect redirected spending cuts elsewhere. In a model with only a unified public good, such restrictions are effectively meaningless. More importantly, such language is virtually incapable of shaping state's enacted mix of sub-federal spending cuts and tax increases. The modeling of transfer policy can easily be extended such that increased transfers be met with restrictions on sub-federal policy actions, e.g., $T^{F,SF}_t > \bar{T}^{F,SF}_t : \chi G^{SF}_t > \bar{G}^{SF}_t $, where $\chi$ controls the degree to which the restriction binds in practice.} \\
+
+\noindent \textbf{Definition 2: } Under a \textit{bi-level} model of decentralized fiscal federalism, a competitive equilibrium without lump-sum taxation is an allocation $\{C_t, L_t, N_t, K_{t+1}\}$, prices $\{p_t, P_t, W_t, R_t\}$ and policies $\{i_t \geq 0, G^F_t, T_t^{F,SF} \geq 0, T_t \geq 0, \tau_t^{F_n}, \tau_t^k, \tau_t^d, G^{SF}_t, \tau_t^{{SF}_n}, \tau_t^c,\}$ characterized by equations (7), (10), (11), (14), (15), (17), (18), (22), (26), and the following labor supply equation and goods market clearing condition, respectively,
+\begin{align}
+\frac{U_c (C_t, L_t, \xi_t )}{U_L (C_t, L_t, \xi_t )} &= \frac{(1+\tau_t^c)}{(1 - \tau^{F_n}_t (1 - \tau^{{SF}_n}_t) - \tau^{{SF}_n}_t)} \frac{P_t}{W_t} \\
+C_{t} + G^F_{t} + G^{SF}_{t} + K_{t+1} - (1-\delta)K_t +  &\frac{\sigma_I}{2} \Big(\frac{I_t}{K_t} -\delta \Big)^2 K_t = \Big[ \int_0^1  \Big( \frac{p_{it}}{P_t} \Big) ^{-\theta} di \Big]^{-1} A K_t ^{\alpha_F} N_t ^{1-\alpha_F}.
+\end{align}
+
+Just as the centralized government's budget constraint was redundant in Definition 1, the federal government's budget constraint is redundant in Definition 2, but the sub-federal government's budget constraint is not. The static federal labor income tax rate $\bar{\tau}^{F_n} = 0.33$ and sub-federal labor income tax rate $\bar{\tau}^{S_n} = 0.044$ are taken as the federal and state average marginal tax rates from Barro and Redlick (2011), so that the \textit{effective} average marginal tax rate  on households, 
+$ \tau^{F_n}_t (1 - \tau^{{SF}_n}_t) + \tau^{{SF}_n}_t = .33(1-.044) + 0.044 = 0.36 \equiv \tau_t^n,
+$ as in the benchmark model of fully centralized government. The federal and sub-federal government shares are both set so $\Omega^F = \Omega^{SF} = 0.11$, so $\bar{G}^F = \bar{G}^{SF} = 0.11 \times \bar{Y}$ and $\bar{G}^F + \bar{G}^{SF} = \bar{G}$. Federal transfers are set such that $\bar{T}^{F,S} = 0.023 \times \bar{Y} $. When shocked, federal and sub-federal government expenditure both evolve analogously to (24), also with persistences $\rho_{G^F} = \rho_{G^{SF}} = 0.8$. The exogenous centralized government spending shock, $\xi_0^G = $2\%, analyzed above and exogenous federal and sub-federal government spending shocks of $\xi_0^{G^F} = \xi_0^{G^{SF}} =$ 4\% analyzed below are by design of identical magnitude and persistence, scaled to be comparable to the impact of ARRA on government current expenditure.\footnote{ ARRA increased total government current expenditures between 1.2\% and 4.2\% over 2009Q1-2011Q4 (averaging 2.8\%), and federal government current expenditures between 1.9\% and 6.3\% (averaging 4.2\%). The composition of this increase was a mix of tax cuts and transfers to households, transfers to state and local governments, and federal consumption expenditures. See Oh and Reis (2012).}
+
+With a binding sub-federal level budget constraint, the implications of an adverse fiscal shock for output widely across assumptions regarding how fiscal instruments respond endogenously---variance compounded by the nature of liquidity traps.
+
+In a fundamentals-driven liquidity trap, where a shock such as a change in tastes increases desired savings and reduces consumption, deflationary pressure raises the real interest rate and a sufficiently large shock typically forces a sharp drop in output to restore equilibrium in savings. When facing a backward-bending aggregate demand schedule below a real interest rate of zero, various fiscal policies can \textit{crowd in} private consumption by reducing deflation or deflationary expectations. When the backwards bending portion of the aggregate demand schedule is steeper than the aggregate supply schedule, decreased government spending will reduce inflation (or worsen deflation) and output. In this environment, labor income tax increases become stimulative because reducing labor supply is inflationary.\footnote{Conversely, in the expectations-driven liquidity trap caused by self-fulfilling equilibrium of low confidence developed by Mertens and Ravn (2014), in which the aggregate supply schedule is steeper than the aggregate demand schedule, labor income tax decreases become stimulative through the labor supply channel, while government spending instead acts as a deflationary force. As in Christiano, Eichenbaum, and Rebelo (2011) and Correia et al. (2013), the analysis of this paper is focused on a fundamentals-driven based liquidity trap. An extension of vertically decentralized fiscal federalism to an expectations-based liquidity trap is left for future research or drafts.} 
+
+Without additional structure, increased federal transfers to sub-federal levels of government fall indeterminately between these two ramifications for the price level:  By relieving pressure on a binding budget constraint, a positive innovation in federal transfers to states can increase sub-federal government expenditure or decrease pressure to raise tax rates. Thus the precise implication of using federal transfers to states in a liquidity trap will depend greatly on both the policy instruments available to the sub-federal levels of government as well as their objective function. A principal aim of this paper is to tie down the net effect of these conflicting policy implications based on the endogenous state-level fiscal retrenchment realized during the Great Recession, thus circumventing indeterminacy and maintaing tractability in a representative agent environment (as opposed to developing a game theoretic political economy framework). 
+
+Five illustrative cases are explored in turn: The entirety of the endogenous sub-federal fiscal adjustment occurs first through sub-federal government spending cuts, then consumption tax rate hikes, and then sub-federal personal income tax rate hikes. Fourth, the requisite fiscal adjustment occurs through increased federal transfers.\footnote{Separating out the composition of discretionary policy changes from the recession's automatic effects on expenditure and revenues for some 40,000 municipal and local governments is a vastly more complicated endeavor than for the state level, and no such estimates could be found.} Lastly, the preferred model mixes spending cuts and tax rate increases, calibrated to reflect the discretionary spending cut and tax increase dynamics enacted by states to close cumulative budget shortfalls over fiscal 2008-2012. The representative household knows the structure of each fiscal adjustment. \smallskip
+
+\subsubsection{Endogenous Sub-Federal Policy Response: Spending}
+When the endogenous response to the adverse fiscal shock takes the form of SLG budget cuts, the preference shock induces a persistently steeper decline in output (initially 22.0\% deeper), hours (22.0\%), investment (20.0\%), and consumption (3.2\%) than the benchmark liquidity trap with a fully centralized government. The shock depresses output by an additional 2.5 to 0.6 percentage points for the first 8 quarters (See Figure 2). Deflationary pressure initially increases by 10.0\% (disinflation rises 0.4 percentage points), pushing up the real interest rate 7.8\% relative to the centralized benchmark.
+
+\begin{center}
+\includegraphics[scale=0.8]{SYP_F2}
+\end{center}
+
+With sub-federal government spending cut feedbacks exacerbating the liquidity trap downturn, increased federal spending intuitively becomes more potent at increasing aggregate demand---it lessens the erosion of the sub-federal tax base and hence the deflationary spending cuts induced by the balanced-budget requirement. Mimicking the effective magnitude of the 2\% positive innovation to total government spending run in the centralized benchmark model, a $\xi^F_0 = $ 4\% innovation in federal government spending yields a higher federal spending multiplier, $m^{G^F}_1 = $ \$1.35, of increased output for each dollar under this first model of fiscal decentralization, relative to $m^{G}_b = $ \$1.28 induced by the benchmark model. The federal government spending multiplier remains persistently higher than the equivalent centralized government spending multiplier, by an average of \$0.05 over the first 20 periods. The positive aggregate demand externality of federal spending on the sub-federal tax base lessens the initial reduction in sub-federal spending by 2.1 percent, driving this elevated multiplier result. 
+
+Increased federal transfers effectively act as a one-for-one substitute for increased federal spending, operating through the same direct and indirect effects on endogenous sub-federal feedbacks. An increase in federal transfers of equivalent magnitude and persistence to the 4\% innovation in federal  spending also yields a multiplier $m^{T^{F,SF}}_1 = $ \$1.35.\footnote{Unlike federal spending, federal transfers can be fine tuned instead of operating on a lagged basis.} 
+
+The sub-federal balanced budget spending multiplier is clearly not defined in this model, as increased spending is offset one-for-one with spending cuts. \bigskip
+
+\subsubsection{Endogenous Sub-Federal Policy Response: Consumption Taxes}
+When the endogenous response to the adverse fiscal shock takes the form of SLG consumption tax increases, the preference shock again induces a persistently steeper decline in output (initially 14.2\% deeper), hours (15.6\%), investment (8.2\%), and consumption (15.6\%) than the benchmark model. Save consumption, there is less propagation of the preference shock than when SLG government responds endogenously. The shock depresses output by an additional 1.6 to 0.4 percentage points for the first 8 quarters, relative to the benchmark liquidity trap with fully centralized government (see Figure 3). 
+
+\begin{center}
+\includegraphics[scale=0.8]{SYP_F3}
+\end{center}
+
+In a similar vein to Correia et al. (2013) demonstrating that rising consumption taxes can mimic inflation, the inflationary initial rise in consumption taxes mitigates the effect of a rising real interest rate on the propagation of the preference shock. But the downturn remains considerably worse than the benchmark case of fully centralized government; the key difference is that the SLG consumption tax rate spikes from $\bar{\tau}^c = 9.7\%$ to $\tau^c_1 = 13.4\%$, but then declines for the remaining duration at the zero lower bound, as the erosion of the tax base is gradually reversed---and from its apex, a declining path for consumption taxes is deflationary. With the sub-federal government's budget constraint satisfied by an endogenous response in consumption taxes, deflationary pressure initially increases 2.8\% (disinflation rises 0.1 percentage points), pushing up the real interest rate by 2.2\% relative to the centralized benchmark, but this effect then recedes. 
+
+But juxtaposed with the more deflationary impact of sub-federal government spending cuts, there is less propagation of the preference shock and downturn in investment, hours, and output when consumption taxes rise. The initial decline in output is 0.8 percentage points less than in the case of endogenous SLG spending responses, and the drop in output remains consistently smaller while the economy remains at the ZLB. The key difference is inflation: Initial deflationary pressure is reduced by 0.3 percentage points when consumption taxes respond instead of endogenized SLG spending. 
+
+%The initial cushioning to deflationary pressure reduces the first period drop in consumption, but higher consumption taxes and a lesser rise in the real interest rate yield an initial drop in consumption 1.9 percentage points larger. 
+
+The efficacy of increased federal government spending in a liquidity trap again rises when relative to the centralized government benchmark, as the SLG consumption tax hikes worsen the downturn, but to a lesser extent than when SLG spending cuts respond. The same 4\% innovation in federal government expenditure increases contemporaneous output by $m^{G^F}_2 = $ \$1.33 for each dollar of spending. The federal government spending multiplier remains persistently higher than the equivalent centralized government spending multiplier, by an average of \$0.04 over the first 20 periods. 
+
+Here innovations to federal transfers are less effective at boosting demand than federal spending, as preventing consumption tax increases is less inflationary and stimulative than preventing spending cuts. An increase in federal transfers of equivalent magnitude and persistence to the 4\% innovation in federal spending also yields a multiplier $m^{T^{F,SF}}_2 = $ \$0.92. 
+
+The sub-federal balanced budget spending multiplier is considerably smaller, as stimulative increased spending is offset nearly one-for-one with contractionary consumption tax increases. An equivalent 4\% innovation in sub-federal government spending yields a multiplier $m^{F^{SF}}_2 = $ \$0.41. 
+
+ \bigskip
+
+\subsubsection{Endogenous Sub-Federal Policy Response: Labor Income Taxes}
+Conversely, when the endogenous response to the adverse fiscal shock takes the form of SLG income tax increases, the preference shock induces a persistently \textit{lesser} decline in output (initially 7.9\% less of a decline), investment (32.8\%), and consumption (4.2\%) than the benchmark model (see Figure 4). A lesser initial reduction in hours worked eases the propagation of the preference shock through two mutually reinforcing channels. Labor income tax increases and falling labor supply induces less deflationary pressure than rising consumption taxes or falling SLG spending. And a relatively decreased marginal productivity of labor increases the marginal productivity of capital, inducing less of a decline in investment demand. Initial disinflation falls by 0.8 percentage points relative to the benchmark model, 1.1 percentage points relative to the spending response model (2.1.1), and 0.9 percentage points relative to the consumption tax response model (2.2.2).
+
+%\footnote{Hours initially fall by 0.5 percentage point less than in the benchmark model, but fall an average 1.9 percentage points \textit{more} while the economy is at the zero lower bound.} 
+
+\begin{center}
+\includegraphics[scale=0.8]{SYP_F4}
+\end{center}
+
+With the endogenous labor income tax increase slightly mitigating the decline in output, the boost from increased federal government spending in a liquidity trap now falls relative to the centralized government benchmark model. With less of an increase in the SLG tax rate and more of a decrease in hours worked, the vertical fiscal externality of expanding the shared tax base boosts output by less. 
+
+A 2\% innovation in federal spending now increases contemporaneous output by a lesser $m^{G^F}_3 = $ \$1.25. But the federal government spending multiplier only falls shy of the equivalent centralized government spending multiplier for the first three periods, and on net averages \$0.01 higher over the first 20 periods. 
+
+But increasing federal transfers now \textit{decreases} output by mitigating the expansionary increase in labor income taxes to a much greater extent than through the tax externality channel. An increase in federal transfers of equivalent magnitude and persistence to the 4\% innovation in federal spending yields a multiplier $m^{T^{F,SF}}_2 = $ -\$0.39---the lowest of the induced fiscal multipliers in this paper. 
+
+And the sub-federal balanced budget spending multiplier is noticeably elevated, as stimulative increased spending is offset by stimulative labor income tax increases. An equivalent 4\% innovation in sub-federal  spending yields a multiplier $m^{F^{SF}}_2 = $ \$1.57---the highest of the induced fiscal multipliers. 
+\bigskip
+
+\subsubsection{Endogenous  Federal Policy Response: Increased Transfers to States}
+To obviate any of the preceding endogenous sub-federal policy responses, the federal government could also sufficiently expand transfers to states to keep (26) satisfied, additionally shutting down the endogenous aggregate demand feedbacks analyzed. As such, the fiscal multiplier for innovations to either federal spending, $m^{G^{F}}_4 $, or SLG spending, $m^{G^{SF}}_4 $, are \$1.276, identical to the federal spending multiplier in the centralized benchmark model. 
+
+\subsubsection{Endogenous Sub-Federal Policy Response: The Great Recession}
+As noted above, state and local governments responded to the erosion of tax revenue during the Great Recession through a variety of discretionary spending cuts and tax increases, and to a much lesser extent borrowing, timing-shifts, and gimmicks (all out of the purview of this model). This paper's preferred model of stylized fiscal federalism with endogenous sub-federal fiscal policy responses is calibrated to match state and local government spending and tax responses to the Great Recession. McNicholl (2012) decomposes the way states closed \$595 billion in shortfalls and an additional \$54 billion in offsets cumulatively over FY08-12: \$291 billion in spending cuts, \$156 billion in federal fiscal relief, \$101 billion in tax and user fee increases, \$57 billion from drawing down rainy day funds, and \$45 billion in other measures (e.g., shifting payment dates, borrowing). Thirty-three states enacted legislative changes to raise more revenue, with 24 states increasing user fees, 22 increasing excise taxes, 17 increasing sales taxes, 17 increasing business taxes, and 13 increasing personal income taxes. Sales and excise tax changes accounted for 37\% of the increased revenue, with another 31\% from personal income tax changes. Accordingly, this model's calibration targets a ratio of \$2.9 in spending cuts for each dollar in revenue increases, and a ratio of \$1.2 in consumption tax increases cuts for each dollar in personal income tax increases. 
+
+The model of fiscal decentralization with endogenous consumption tax responses (2.2.2) is adapted to additionally endogenize \textit{temporary} discretionary reductions in sub-federal government spending and labor income tax surcharges, based on the counterfactual SLG revenue shortfall holding policy instruments fixed at steady state values, $S^{SF}_t$,
+\begin{align}
+S^{SF}_t &= \bar{\tau}^{{SF}_n} (\bar{W} \bar{N} - W_t N_t) + \bar{\tau}^C (\bar{C} - C_t)+ \bar{T}^{F,SF} -T^{F,SF}  \\
+\hat{G}^{SF}_t &= \psi S^{SF}_t \\
+G^{SF}_t &=  \bar{G^{SF}} - \hat{G}^{SF}_t \\
+\hat{\tau}^{{SF}_n}_t W_t N_t &=  \nu (1 - \psi) S^{SF}_t \\
+\tau^{{SF}_n}_t &= \bar{\tau}^{{SF}_n}_t + \hat{\tau}^{{SF}_n}_t
+\end{align}  
+
+\noindent where $\hat{G}^{SF}_t$ is the discretionary sub-federal spending response, and $\hat{\tau}^{{SF}_n}_t$ is the discretionary change in the sub-federal labor income tax rate. Setting $\psi = \frac{2.9}{3.9}$ and $\nu = \frac{1}{1.2}$ achieves the calibration targets outlined above. This specification leaves the sub-federal budget constraint and the definition of competitive equilibrium under decentralized fiscal federalism unchanged.
+
+Imposing this structure, simulations show that the mixed policy response consists of net sub-federal government spending falling 12.6\% (versus 16.7\% in (2.2.1)), the consumption tax increasing from the steady state rate of 9.7\% to 10.2\% (versus 13.4\% in (2.2.2)), and the sub-federal labor income tax initially jumps from 4.4\% to 4.9\% (versus 8.0\% in (2.2.3)), thereby raising the effective marginal tax rate from 36\% to 36.3\%. When the endogenous response takes this mixed form of SLG fiscal retrenchment, and labor income tax increases, the preference shock induces a very similar allocation response to the benchmark model, with the countervailing endogenous feedback effects largely neutralizing one another. The economy experiences a slightly lesser decline in output (initially 3.0\% less of a decline), investment (3.4\%), and hours worked (2.9\%) than the benchmark model. Consumption, however, drops 1.1\% more than the benchmark model, the result of the increase in consumption taxes. The lessened propagation of the preference shock is driven by an increase in hours worked for most of the duration of the liquidity trap, resulting from the increase in labor income taxes. 
+
+\begin{center}
+\includegraphics[scale=0.8]{SYP_F5}
+\end{center}
+
+With the endogenous labor income tax increase slightly mitigating the decline in output, the boost from increased federal government spending in a liquidity trap now rises 4.7\% relative to the centralized benchmark model. The same 4\% innovation in federal spending now increases contemporaneous output by $m^{G^{F}}_5 = $ \$1.34 for each dollar, comparable to and slightly between the federal spending multipliers when either sub-federal spending or consumption taxes respond. 
+
+An equivalent innovation in transfer grants now increases contemporaneous output by $m^{T^{F,SF}}_5 = $ \$1.13 per dollar, down from $m^{T^{F,SF}}_1 = $ \$1.35 when sub-federal government spending adjusts endogenously but up from $m^{T^{F,SF}}_2 = $ \$0.92 when consumption taxes adjust and up substantially from $m^{T^{F,SF}}_3 = $ -\$0.39 when sub-federal labor income taxes adjust (see Table 2). 
+
+An equivalent increase in $G^S$ now increases contemporaneous output by $m^{G^{SF}}_5 = $ \$0.41 for each dollar of spending, in line with $m^{G^{SF}}_2 = $ \$0.41 when consumption taxes adjust.  Increased expenditure is largely offset by other sub-federal spending decreases, but a smaller part of the adjustment comes through contractionary consumption tax increase and expansionary labor income tax, with the latter effect dominating. This is effectively an averaging of the balanced budget spending multiplier consumption taxes respond and the higher $m^{T^{F,SF}}_3 = $ \$1.57 when sub-federal labor income taxes adjust, weighted by the size of the respective policy responses. 
+
+\bigskip
+
+Figure 6 depicts the corresponding paths for contemporaneous fiscal multipliers implied by the five models of decentralized fiscal federalism and the benchmark model of centralized government, when applicable. The corresponding output impulse response functions are depicted in Figure 7. 
+
+\begin{center}
+\includegraphics[scale=0.8]{SYP_F6}
+\end{center}
+
+\begin{center}
+\includegraphics[scale=0.8]{SYP_F7}
+\end{center}
+
+\subsection{Splitting Federal, State, and Local Fiscal Authorities}
+The intuition behind endogenous policy feedbacks and implications for fiscal multipliers is captured by the basic model splitting the federal and sub-federal levels of government. But a more representative model of vertically decentralized U.S. fiscal federalism, nesting distinct state and local governments as sharing a common tax base with the federal government, is developed here for later use studying limitations on unconventional fiscal policy. 
+ 
+The federal government again retains control over capital income taxation, a labor income tax, a corporate income tax, transfers to households, and transfers to state governments, $T^{F,S}$. The state level of government controls a consumption tax, $\tau_t^{S_c}$, a labor income tax, $\tau_t^{S_n}$, transfers to local governments, $T^{S,L}$, and provides a state level public good, $G^S$. The local level of government provides a local public good, $G^L$, financed by a local government consumption tax, $\tau_t^{L_c}$, and transfers from state governments. Thus the respective federal (`F'), state (`S'), and local (`L') government budget constraints separate as:
+\begin{subequations} 
+\begin{align}
+G^F_t + T^{F,S}_t &= \tau^{F_n}_t (1 - \tau^{S_n}_t) W_t N_t + \tau_k (R_t - \delta) K_t  + \tau_t^d \Pi_t - T_t \\  
+& s.t. \ \ \ T_t \geq 0, \ \ T^{FS}_t \geq 0
+\end{align}
+\end{subequations}
+\begin{subequations}  
+\begin{align}
+G^S_t &= \tau^{S_n}_t W_t N_t + \tau_t^{S_c} C_t  + T^{F,S}_t - T^{S,L}_t \\
+& s.t. \ \ \ T^{S,L}_t \geq 0
+\end{align}
+\end{subequations} 
+\begin{align}
+G^L_t &=  \tau_t^{L_c} C_t  + T^{S,L}_t 
+\end{align}
+\noindent \textbf{Definition 3: } Under a \textit{tri-level} model of decentralized fiscal federalism, a competitive equilibrium without lump-sum taxation is an allocation $\{C_t, L_t, N_t, K_t\}$, prices $\{p_t, P_t, W_t, R_t\}$ and policies $\{i_t \geq 0, G^F_t, T^{F,S} \geq 0, \tau_t^{F_n}, \tau_t^k, \tau_t^d, G^S_t, \tau_t^{S_n}, \tau_t^{S_c}, T^{S,L}_t \geq 0, T_t \geq 0, G^L_t, \tau_t^{L_c}, T^{S,L}_t \}$ characterized by equations (7), (10), (11), (14), (16), (17), (18), (22), (27), (35a), (36), where $\tau_t^c$ in equations (11), (14), (17), (22), and (27) is redefined as $\tau_t^c \equiv \tau_t^{S_c} + \tau_t^{L_c}$ and $\tau^{{SF}_n}$ in equation (27) is redefined as $\tau^{{SF}_n} \equiv \tau^{{S_n}}$, and the following goods market clearing condition:
+\begin{align}
+& C_{t} + G^F_{t} + G^S_{t} + G^L_{t} + K_{t+1} - (1-\delta)K_t +  &\frac{\sigma_I}{2} \Big(\frac{I_t}{K_t} - \delta \Big)^2 K_t = \Big[ \int_0^1  \Big( \frac{p_{it}}{P_t} \Big) ^{-\theta} di \Big]^{-1} A K_t ^{\alpha_F} N_t ^{1-\alpha_F}
+\end{align}
+
+The federal government's budget constraint remains redundant, but the distinct state and local government budget constraints are not. Transfers are calibrated such that $\bar{T}^{S,L} = 0.03 \times \bar{Y}$ and $\bar{T}^{F,S} = 0.023 \times \bar{Y} $, as in the bi-level model of decentralized fiscal federalism. Labor income tax rates are calibrated as in the bi-level model of decentralized fiscal federalism, with full deductibility of state income taxes. The federal, state, and local government shares of output are both set so $\Omega^F =  0.11$, $\Omega^S = 0.075 $, and $\Omega^L = 0.035$, thus $\bar{G}^S + \bar{G}^L = \bar{G}^{SF}  = 0.11 \times \bar{Y}$ and $\bar{G}^F + \bar{G}^S + \bar{G}^L = \bar{G} = 0.22$. 
+
+\subsection{Benchmarks Above the Zero Lower Bound}
+
+The preponderance of empirical estimates of transfer and spending multipliers are based on time series in which the central bank is hardly (or never) constrained by the zero lower bound (e.g., Ramey 2011, Carlino and Inman 2014). The difficulties outlined by Christiano, Eichenbaum, and Robelo (2011) in empirically estimating general government spending multipliers in a liquidity trap---the inability to mix evidence across the two states of the world, combined with the dearth of exogenous fiscal shocks when economies have been stuck at the zero lower bound---render these liquidity trap transfer multipliers difficult to benchmark empirically. Viewed differently, this is precisely why the model and estimates are of interest. 
+
+The most useful benchmark for the estimated transfer \textit{above} the zero lower bound is Carlino and Inman (2014), who provide the ``first fully integrated analysis of the macroeconomic effects of intergovernmental transfers." They take a two-pronged approach to estimating fiscal multipliers for federal transfers to state governments: An SVAR approach modeled off of Blanchard and Perotti (2002), using timing restrictions, and a narrative VAR approach based on Ramey (2011), using their accompanying narrative analysis of 23 changes in federal transfer to state governments (Carlino and Inman 2013b). Their preferred SVAR specification finds the aggregate government spending multiplier on intergovernmental transfers is never greater than 0.8. Output multipliers for welfare range from 1.6 to 2.3 and are statistically significant, whereas multipliers for project aid range form 0 to 1.0 and are often statistically insignificant. Without distinguishing between the two types of transfers, our preferred specification for federal transfer multipliers based on the Great Recession mix of endogenous sub-federal responses, $T^{F,SF}_5 = \$0.85$, is in line with their headline estimate.
+
+%\footnote{The four-variable SVAR approach is estimated on the impact of federal net revenues, federal government purchases, and aggregate federal aid on GDP (all \$2005), with three-quarter distributed lag polynomials (based on AIC). Also included are time and time squared trend variables and an indicator for deep recessions (unemployment $> 8\%$). They also repeat a five-variable version with aid split between welfare and project aid, setting welfare aid as decided prior to project aid. The assumed timing restrictions are as follows: 1) Discretionary changes in fiscal policy take at least one quarter to respond to changes in GDP; 2) Assume that discretionary revenues are set prior to discretionary spending for aid or purchases, and then that federal purchases are set before federal aid; 3) Identify built-in contemporaneous responses of federal taxes, purchases, and aid to GDP \`{a} la Blanchard and Perotti (2002), setting the elasticity of federal net of transfers revenues with respect to changes in GDP to 2.08, the elasticity of government purchases to GDP to zero, and -0.35 for the contemporaneous effect of GDP on federal aid to SLGs. As a robustness check, they flip timing restriction on federal spending (i.e., aid before purchases), add federal funds rate and then inflation ordered after four fiscal variables, exclude the tobacco settlement.} 
+%
+%\footnote{For the narrative analysis, the VAR is ordered with aggregate narrative aid first, followed by federal net revenues (excluding federal aid), federal purchases, and GDP,  specifying the level of aid as the amount appropriated for the first full fiscal year of the policy change's implementation. Variables are specified in levels to allow for negative innovations, a quadratic time trend is included, and three lags are used. As a robustness check, they re-run the narrative VAR dropping recession-related events, re-run with only project aid, re-run using only programs enacted within 90 days of the start of the state fiscal year, and re-run without the tobacco settlement.} 
+
+%This SVAR approach based on Blanchard and Perotti (2002) remains subject to Ramey's (2011) critique that SVARs miss the informational timing of fiscal news, biasing results.  In a similar vein, Mertens and Ravn (2013), building off the narrative approach Romer and Romer (2010), show that distinguishing between anticipated and unanticipated tax changes is crucial for unbiased estimates of tax multipliers. 
+%
+%The narrative VAR approach of Carlino and Inman (2014) is motivated in part to address such concerns, but for that analysis they dubiously claim that policy changes in response to recessions are actually exogenous. As neither of these approaches is entirely satisfying, this paper improves upon the empirical estimates of federal transfer multipliers from Carlino and Inman (2014) using the proxy narrative SVAR approach of Mertens and Ravn (2013), which finds [[X]]. 
+
+The federal spending multipliers omitted by this model above the zero lower bound are also in line with the implied government spending multipliers estimated in the narrative VAR analysis of Ramey (2011), which range from 0.6 to 1.2, erring closer to that upper bound. Both above and below the zero lower bound, these federal government spending multipliers are entirely in line with the analytical exposition of government spending multipliers of Woodford (2010), who establishes that the multiplier is  equal to unity if monetary policy maintains a constant real interest rate above the zero lower bound, but slightly lower because the real interest rate rises under more realistic assumptions. As in Woodford (2010), the federal spending multiplier is noticeably elevated when the zero lower bound is binding. 
+
+Federal spending multipliers are initially elevated by between 29\% and 35\% in a liquidity trap (see Tables 2 and 3). Our preferred model calibrated to the Great Recession mix of endogenous policy responses exhibits a comparable 33\% increase in the federal transfer multiplier when the zero lower bound binds. The most dramatic swing is the reversal of federal transfers from $m_3^{T^{F,SF}}$ = \$0.357 to $m_3^{T^{F,SF}}$ = -\$0.388 when sub-federal labor income taxes adjust. Save the negative federal transfer multiplier in that model, federal transfer and sub-federal balanced-budget spending multipliers are consistently lower above the zero lower bound. The inducement of a liquidity trap generally produces much larger relative increases in sub-federal balanced-budget spending multipliers, the exception being the model of endogenous federal transfer responses, in which the effect is identical to federal spending. In our preferred model, the sub-federal balanced-budget multiplier is just $m_5^{G^{SF}}$ = \$0.18 above the zero lower bound, then elevated to $m_5^{G^{SF}}$ = \$0.41 when a liquidity trap is induced.  Al fiscal multipliers are also considerably more time invariant than when the zero lower bound is binding, particularly true of federal spending (See Figure 8).
+
+\begin{center}
+\includegraphics[scale=0.8]{SYP_F8}
+\end{center}
+
+\section{Unconventional Fiscal Policy with Decentralization}
+
+If nesting the model of vertically decentralized U.S. fiscal federalism developed above leaves implementation of the unconventional fiscal policy mix developed Correia et al. (2013) unimpeded, there would be little motivation to proceed with the otherwise natural progression to welfare and conventional optical fiscal policy implications. Analysis of how implementation breaks down when decentralized fiscal federalism is modeled as a noncooperative game between the federal and sub-federal governments follows a quick review of the theory, intuition, and implementation of unconventional fiscal policy under the benchmark model of centralized federalism. 
+
+\subsection{Unconventional Fiscal Policy with Centralization}
+
+The crux of Correia et al. (2013) is demonstrating that a combination of rising consumption taxes and falling labor income taxes can circumvent the zero lower bound to implement a second-best allocation even when lump-sum taxes are ruled out.  The key insight is that the household's optimality conditions are based on after-tax prices for consumption goods and net-of-tax income. They show that an allocation and sequence of prices $\{p_t, P_t, W_t, R_t, C_t, L_t, N_t, K_{t+1}\}$ satisfying all equilibrium conditions save the zero bound constraint (i.e., the equilibrium allocation and prices that would be realized allowing for a negative nominal interest rate) and supported by policies $\{i_t, \tau_t^c, \tau_t^n, \tau_t^k, s_t^I, \tau_t^d\}$ can be achieved with an alternative path for policies $\{\tilde{i}_t, \tilde{\tau}_t^c, \tilde{\tau}_t^n, \tilde{\tau}_t^k, \tilde{s}_t^I, \tilde{\tau}_t^d\}$  satisfying the zero bound constraint $\tilde{i}_t = \text{max}\{i_t, 0\}$, where $i_t <0$ for $1 \leq t \leq T$. A path for consumption taxes, $\{ \tilde{\tau}_t^c \}_{t=0}^{\infty}$, can first be predetermined by the household's Euler 
+\begin{align}
+\frac{1}{1+\tilde{i}_t} = E_t \Big[ \frac{\beta U_c (C_{t+1}, L_{t+1}, \xi_{t+1})}{U_c (C_t, L_t, \xi_t )} \frac{P_t}{P_{t+1}} \frac{1+\tilde{\tau}_t^c} {1+\tilde{\tau}_{t+1}^c}  \Big] \end{align}
+so the path of consumption taxes perfectly counteracts the preference shocks,
+\begin{align}
+\beta \frac{\xi_{t+1}}{\xi_t} = \frac{1 + \tilde{\tau}_{t+1}^{c} }{1 + \tilde{\tau}_t^{c}} 
+\end{align}
+\noindent for $t \in \{0,..,T\}$. From this requisite schedule of consumption tax growth, an optimal path of labor income taxes, $\{ \tilde{\tau}_t^n \}_{t=0}^{\infty}$, can be backed out from the labor supply equation
+\begin{align}
+\frac{1+\tilde{\tau}_t^c}{1 - \tilde{\tau}_t^n} &=  \frac{U_c (C_t, L_t, \xi_t )}{U_L (C_t, L_t, \xi_t )}\frac{W_t}{P_t} = \frac{1+\tau_t^c}{1 - \tau_t^n}.  
+\end{align}
+
+\noindent Implementing the second-best allocation requires keeping firms' optimal price resetting choices, $p_t$, and price-setting weights, $\eta_{t,j}$ unchanged, requiring a sequence of profit taxes,  $\{ \tilde{\tau}_t^d \}_{t=0}^{\infty}$,
+\begin{align}
+\frac{1-\tilde{\tau}_t^d}{1 + \tilde{\tau}_t^c} & = \frac{1-\tau_t^d}{1 + \tau_t^c}.  
+\end{align}
+
+\noindent to be backed out of the path for consumption taxes, keeping equations (17) and hence (16) and (18) fixed. Lastly, the raised path for consumption taxes distorts the household's arbitrage condition for capital accumulation (14), \textit{ceteris paribus}, so investment incentives must also be realigned to implement the second-best allocation. Correia et al. (2013) construct a path for investment subsidies, $\{ \tilde{s}_t^I \}_{t=0}^{T}$, otherwise set to zero in the steady state, as follows: 
+%\footnote{Correia et al. (2013) demonstrate that the limiting profits tax rate of 100\% is optimal, as profits are pure economic rents in this model with capital, but there is a natural restriction that full confiscatory taxation cannot be allowed. Accordingly, profit taxes in Section 2 were implicitly set to be asymptotically approaching unity. With $\tilde{\tau}_t^c >  \tau_t^c$ to mimic inflation, $\tilde{\tau}_t^d <  \tau_t^d$, this natural restriction remains satisfied.} 
+\begin{align}
+&\frac{U_c (C_t, L_t, \xi_t )}{(1+\tilde{\tau}_t^c)} = E_t \Bigg\{ \frac{ \beta U_c (C_{t+1}, L_{t+1}, \xi_{t+1})} {(1+\tilde{\tau}_{t+1}^c)} \\ \notag & \times \Big[ \frac{(1-\tilde{s}^I_{t+1})}{(1-\tilde{s}^I_{t})} \bigg(1 - \delta - \frac{\sigma_I}{2} \Big( \frac{I_{t+1}}{K_{t+1}} - \delta \Big)^2  - \sigma_I \Big( \frac{I_{t+1}}{K_{t+1}} - \delta \Big) \frac{I_{t+1}}{K_{t+1}} \bigg) + \frac{(1 - {\tau}_{t+1}^k) \frac{R_{t+1}}{P_{t+1}} + {\tau}_{t+1}^k \delta}{(1-\tilde{s}^I_{t})} \Big] \Bigg\}.
+\end{align}
+\noindent Alternatively maintaining $ \tilde{s}_t^I = s_t^I = 0, \ \forall t=\{0,1,..., \infty\}$ as in the steady state and as implicitly set in Section 2, the path for capital income taxation, $\{ \tilde{\tau}_t^k \}_{t=0}^{T}$, would equivalently be adjusted to follow
+\begin{align}
+&\frac{U_c (C_t, L_t, \xi_t )}{(1+\tilde{\tau}_t^c)} = E_t \Big\{ \frac{ \beta U_c (C_{t+1}, L_{t+1}, \xi_{t+1})} {(1+\tilde{\tau}_{t+1}^c)} \\ \notag & \times \Big[ (1 - \delta)  - \frac{\sigma_I}{2} \Big( \frac{I_{t+1}}{K_{t+1}} - \delta \Big)^2  - \sigma_I \Big( \frac{I_{t+1}}{K_{t+1}} - \delta \Big) \frac{I_{t+1}}{K_{t+1}} + (1 - \tilde{\tau}_{t+1}^k) \frac{R_{t+1}}{P_{t+1}} + \tilde{\tau}_{t+1}^k \delta \Big] \Big\}. 
+\end{align}
+\noindent Under the benchmark model of centralized fiscal federalism as calibrated in Section 2.1, unconventional fiscal policy would work as follows: If the zero lower bound for nominal interest rates could be waived, the central bank would set an annualized nominal interest rate of -13.5\%, allowing the real interest rate to fall to -4.5\% in spite of considerable deflationary pressure. The reduction in the real interest rate would spur a 10\% jump in initial investment and substantially cushion the drops in output (-69.8\%), consumption (-42.4\%), hours worked (-76.5\%), and inflation (-19.6\%), relative to the allocation without unconventional fiscal policy (see Figure 9). 
+
+\begin{center}
+\includegraphics[scale=0.8]{SYP_F9}
+\end{center}
+
+The key to achieving this second-best allocation is mimicking the path for the real interest rate in Figure 9 with positive  after-tax consumer price growth inclusive of rising consumption taxes, or ``effective consumer price inflation," $\tilde{\pi}_t = \pi_t \frac{(1+\tilde{\tau}_{t+1}^c)}{(1+\tilde{\tau}_t^c)} $, and a nominal interest rate constrained by the zero lower bound, as depicted in Figure 10. As can be backed out of (38), the necessary sequence for effective consumer price inflation is achievable by gradually raising $\tau^c$ from its initial steady state rate of 9.6\% to 19.0\% over the first five quarters (See Figure 11). The corresponding drop in $\tau_n$ is a reduction from the initial steady state rate of 36\% to 30.5\% over five quarters, as can be backed out of (40). 
+
+\begin{center}
+\includegraphics[scale=0.8]{SYP_F10}
+\end{center}
+
+\begin{center}
+\includegraphics[scale=0.8]{SYP_F11}
+\end{center}
+
+Even when all requisite policy levers are controlled strictly at a centralized level of government, implementation of this path for unconventional fiscal policy rates faces obvious logistical impediments. Consumption tax rates, and more problematically, the accompanying declining labor income tax rates would have to be changed on a quarterly basis. Labor income taxes are set on an annual basis, and attempting to implement separate tax schedules for each of four quarterly labor incomes---let alone doing so in a way the public was fully cognizant of---would be an administrative nightmare, and likely infeasible.  Even if politicians and tax authorities could implement such a schedule of rapidly falling labor income tax rates, the idea that labor supply would adjust according without lag is highly suspect. Salience issues would have to be overcome, conveying to the public that consumption taxes were steadily rising and would be made permanently higher. And if labor income taxes are restricted such that they can only be adjusted on an annual basis, unconventional fiscal policy can no longer deliver the second-best allocation even under full centralization: The requisite path for labor income taxes, $\{ \tilde{\tau}_t^n \}_{t=0}^{T}$, to satisfy (40) can no longer simultaneously hold with the path for consumption taxes, $\{ \tilde{\tau}_t^c \}_{t=0}^{T}$, required by (38). 
+
+But ignoring such pragmatic implementation concerns, the decentralization of federalism presents new complications for this policy mix, stemming from consumption taxes restriction to the sub-federal level and the binding sub-federal budget constraint, which requires altered transfer policy sometimes impeded by the related non-negativity constraint (25b). 
+
+\subsection{Cooperative Game Framework: Full Policy Coordination}
+
+As in Keen (1998), this paper assumes that the federal government faces no informational asymmetries, but for constitutional reasons cannot generally coerce sub-federal governments into setting particular policies. But this paper first develops a benchmark case in which the governments play a cooperative game with full policy coordination and a common objective of maximizing the utility of a representative household (i.e., solving the planner's problem when all policy instruments are available), which nests such a model allowing federal coercion of lower levels of government.  
+
+Full policy coordination for implementing unconventional fiscal policy clearly hinges on the schedule of rising consumption taxes outlined in Section 3.1, $\{ \tilde{\tau}_t^c \}_{t=0}^{T}$, or one slightly altered by endogenous sub-federal feedback effects missing from that centralized model, as explored in Section 2.2.
+
+Without imposing any additional structure, the requisite path for national labor income taxes, $\{ \tilde{\tau}_t^n \}_{t=0}^{T}$, can be constructed by an infinite combination of federal and sub-federal labor income taxes under unconventional fiscal policy, 
+\begin{align} \tilde{\tau}_t^n =  \tilde{\tau}^{F_n}_t (1 -  \tilde{\tau}^{S_n}_t) + \tilde{\tau}^{S_n}_t.
+\end{align} 
+In this section, full policy coordination circumvents any related indeterminacy, and some additional structure imposed by the sub-federal budget constraint and limitations on the direction of transfers restrict the feasible set of labor income tax rate combinations. 
+
+As underscored by Figure 12, the endogenous \textit{conventional} tax policy responses used to restore sub-federal budget balance in Section 2 push in the opposite direction of the paths required for unconventional policy, relative to their steady state levels.
+
+\begin{center}
+\includegraphics[scale=0.8]{SYP_F12}
+\end{center}
+
+Given that the unconventional fiscal policy for consumption taxes will ease the multiplier on the sub-federal budget constraint, it perhaps makes intuitive sense for the labor income tax adjustment to occur at the sub-federal level, to exert countervailing pressure.\footnote{Similarly, the requisite investment subsidy or capital income tax reduction balancing (42) or (43) will reduce federal revenues, revenue pressure that would be exacerbated by additionally reducing federal income taxes. In the new steady state, however, the sharp rise in sub-federal consumption tax rates will be the dominant revenue change, and excess sub-federal revenue will compel a reduction in federal transfers, exerting a countervailing easing of federal budget pressure.} Achieving the requisite effective national tax rate for unconventional fiscal policy would require dropping the sub-federal tax rate from 4.4\% to a labor income tax \textit{subsidy} of 3.7\%.  
+
+If just the sub-federal tax rate were reduced as such, the second-best allocation would initially render sub-federal revenue shy of expenditures, but substantially exceed expenditure as the economy was exiting the liquidity trap and in the new steady state, \textit{ceteris paribus}. Federal transfers would have to be increased in the first three quarters, by as much as 38.8\%, but by the fourth quarter, the requisite federal transfer to balance the sub-federal budget would fall below steady state transfers. 
+
+Conversely, the same effective national tax rate for unconventional fiscal policy could be achieved by reducing the federal tax rate from 33.0\% to 27.3\%. If just the federal tax rate were reduced to achieve the net unconventional fiscal policy labor income tax rate, sub-federal revenue would initially fall shy of expenditure, but substantially exceed expenditure as the economy was exiting the liquidity trap and in the new steady state. Federal transfers would have to increase in the first three quarters, by upwards of 50\%, but by the fourth quarter, the requisite federal transfer to balance the sub-federal budget would fall permanently into negative territory, and such negative lump sum transfer (lump sum taxes) are illegal, as discussed in Appendix A. Consequently, sub-federal revenue would exceed expenditure by 32\% in the new steady state.
+
+To ground the feasible set for unconventional fiscal policy and offer one such feasible implementation under full policy coordination, the required sub-federal labor income tax is first backed out while maintaining the requirement that federal transfers to states remain non-negative, that is $ T^{FS}_t \geq 0 \ \ \forall t=\{0,1,..., \infty\}$, while also assuming that state labor income tax reductions are prioritized over federal labor income tax reductions. The requisite federal labor income tax is then backed out. To meet the unconventional fiscal policy path for consumption taxes, the remaining unconventional fiscal policy mix under decentralized fiscal federalism involves a gradual reduction of the sub-federal labor income tax to a new steady state subsidy of 1.5\%, an initial decrease of the federal labor income tax to 29.7\% before it bounces back to a new steady state rate of 31.5\%, and an initial increase in federal transfers to states of 40.6\%, relative to their steady state under conventional decentralized fiscal federalism policy, before they are halved and then fully eliminated (see Figure 13.)
+
+\begin{center}
+\includegraphics[scale=0.8]{SYP_F13}
+\end{center}
+
+In this fully coordinated policy environment, there is a sufficiently wide range of implementable unconventional fiscal policies---with larger sub-federal labor income subsidies  paired with higher federal labor income tax rates to produce the same net national tax rate called for under unconventional fiscal policy in a model of fully centralized fiscal federalism---for bounds to be policy relevant. The natural limiting rate imposed by the Laffer curve ceases to bind for the federal labor income tax alone, given the sub-federal labor subsidy maintaining the unconventional fiscal policy net labor income tax rate.
+
+%Additionally splitting the sub-federal level of government into a state and local sector, each with binding budget constraints, makes for a more useful exercise for understanding the limitations. Further decentralizing the 
+
+Just as the liquidity trap environment considerably alters the policy implications of many fiscal instruments, this cooperative unconventional policy combination offers a counterexample of the conduct of optimal stabilization policy being fully apportioned to the centralized government, as the fiscal federalism literature has long held. 
+
+\subsection{Noncooperative Game Framework}
+
+But full policy coordination is a very strong assumption, as underscored by the fiscal federalism literature's  focus on varying objectives and strategic games between levels of government. When relaxed to noncooperative game theoretic frameworks, implementability of unconventional fiscal policy breaks down under vertically decentralized fiscal federalism. 
+
+Based on the calibration to U.S. fiscal federalism, it follows trivially from the analysis in Section 3 that the requisite upward path for consumption taxes would never be realized if the sub-federal government played Stackelberg leader---the amount of revenue produced vastly exceeds what is needed to finance expenditure, to say nothing of constitutional, statutory, or procedural impediments to either revenue or tax rate increases. A political economy framework in which state and local governments seek to minimize weighted deviations of spending and tax instruments from voters preferences, as revealed by realized historical average levels and rates, will never generate such a large swing in one particular instrument. Similarly, a model in which state and local governments seek to minimize their cost of providing sub-federal public goods (i.e., maximizing federal transfers) will never accommodate the requisite rise in state and local consumption taxes to implement unconventional fiscal policy, as it involves forfeiting all federal grants-in-aid. 
+
+Ruling out full policy coordination and imposing any objective for the sub-federal government other than implementing unconventional fiscal policy, the only possible route to implementation is for the federal government to try to coerce state and local governments into raising consumption taxes. In practice, degrees of federal fiscal coercion is exerted through federal transfer policy in the attempt to meet varying federal policy objectives, but as a general matter, Congress can use new, increased transfers to coercively pursue policy objectives, not the threat of reducing transfers (see Appendix A). But the non-negativity constraint alone renders coercive reduction of transfers an infeasible too for compelling the unconventional fiscal policy mix under vertically decentralized fiscal federalism.
+
+\subsubsection{Federal Stackelberg Leader: Bi-Level Federalism}
+
+Starting with the bi-level model of vertical fiscal decentralization, the federal government plays Stackelberg leader with the planner's objective of implementing unconventional fiscal policy, while the sub-federal government's objective is satisfying their budget constraint while minimizing the deviations of expenditure and tax rates from their steady state levels according to the aggregate political preferences revealed during the Great Recession (see Section 2.2.5). There is no information asymmetry regarding equations (29-33), so the federal government correctly anticipates the effect of its policy actions operating through the sub-federal budget constraint (26). 
+
+The federal government's primary objective is inducing the sub-federal government to steadily raise consumption tax rates, the only direct leverage for which---policy instruments entering (26)---being reduced transfers to the sub-federal government. But the legal inability to impose lump sum taxes on the sub-federal government becomes a binding constraint well before the requisite consumption tax increase can be compelled even in the first period. Under the mixed sub-federal policy response, fully eliminating federal transfers to the sub-federal governments induces an additional consumption tax hike of just 0.5 percentage points, from 9.9\% to 10.5\%, if the second-best allocation were to be implemented. This is well shy of the initial increase to 13.3\% required for implementing unconventional fiscal policy, let alone the new steady state consumption tax of 19.0\%.
+
+The federal government can also indirectly coerce consumption tax increases, using policy levers operating through vertical tax externalities. Just as raising federal spending was shown to ease the requisite sub-federal fiscal consolidation in Section 2, cutting federal spending in the liquidity trap tightens the degree to which the sub-federal budget constraint binds. Cutting federal income taxes also worsens the sub-federal budgetary shortfall, for the same reasons that raising sub-federal labor income taxes becomes expansionary.
+
+But neither of these are viable policy levers for implementing unconventional fiscal policy. As shown in Section 2.2.5, increased federal spending is inflationary in the liquidity trap, so cutting federal spending worsens the deflationary pressure motivating the consumption tax increases; simulations show that, on net, federal spending reductions increases the gap between the requisite consumption tax path for unconventional fiscal policy and the path for consumption taxes that the federal government can feasibly coerce.
+
+And the headroom to coerce sub-federal fiscal responses through federal labor income taxes is severely constrained by equation (40). The modest endogenous response of rising sub-federal labor income taxes forces a steeper reduction in $\tilde{\tau}^{F_n}_t$ to satisfy (40), as equation (44) from the cooperative policy framework is replaced by
+\begin{align} \tilde{\tau}_t^n =  \tilde{\tau}^{F_n}_t (1 -  {\tau}^{S_n}_t) + {\tau}^{S_n}_t.
+\end{align} 
+in this noncooperative game. Trying to implement the second-best allocation tethers the net effective national income tax rate to 36\%, ruling out substantial federal income tax decreases in labor income taxes. Consequently, implementation of the fiscal policies needed for unconventional fiscal policy to deliver a second-best allocation is infeasible when the federal government can only try to coerce sub-federal policy responses as a Stackelberg leader in a non-cooperative game. 
+
+Barring full implementation, it is plausible that federal policies motivated by the underlying goals of mimicking inflation with a path of rising consumption taxes could be welfare improving when conducted as conventional fiscal policy---i.e., gradually reducing federal transfers to states if the net impact on effective consumer price inflation is both positive and sufficiently higher than the inflationary effects of government spending and/or labor income tax increases. But on balance, the mixed policy response induced by reduced transfers is deflationary. Welfare analysis of conventional fiscal policy in a liquidity trap, when unconventional fiscal policy is infeasible, is deferred to Section 4. 
+%Optimal conventional fiscal policy is deferred to section 5. 
+
+\subsubsection{Federal Stackelberg Leader: Tri-Level Federalism}
+
+More headroom exists for federal coercion of consumption tax increases under the tri-level model of vertically decentralized fiscal federalism, but as will be shown below, the path for unconventional fiscal policy consumption tax increases remains far unattainable.
+
+Just as state grants-in-aid to local government are counted as state's current expenditures in the NIPAs, reduced state transfers to local governments fall under the category of reduced state spending in the data used calibrate model 2.2.5 to state fiscal tightening during the Great Recession. In the tri-level model of vertical fiscal decentralization developed in Section 2.3, some of that reduction in transfers to local governments would spur local consumption tax increases. The share of state spending cuts allocated to reduced transfers is not readily available, but a counterfactual based on trend growth in state spending and transfers suggests roughly 13\% of the reduction in state spending took the form of reduced transfers to local government. Even assuming the entirety in such a reduction in state-to-local transfers was offset by raising local consumption taxes, the resulting net increase in consumption taxes would only rise to 0.9 percentage points, up from 0.5 percentage points in the bi-level model of decentralization. For reasons elucidated in Section 3.3.1, this again falls clearly shy of what is required for unconventional fiscal policy implementation.\footnote{Growth in state current expenditure and state grants in-aid to local governments tracked one another quite closely, with average annual nominal growth of 6.5\% and 6.3\%, respectively. A counterfactual maintaining these growth rates over 2008-2012 suggest that the Great Recession reduced net state spending in 2012 by \$298 billion---in line with the estimates by McNichol (2012) used for calibrating model 2.2.5---and transfers by \$39 billion. Thus the share of state spending cuts apportioned to transfer reductions is set to $\frac{\$39}{\$298} = 12.9\%$.}  Increasing the ratio of state spending cuts apportioned to reduced transfers to localities to its limiting rate of 100\% again fails to make unconventional fiscal policy implementable. 
+
+Even if the federal government were capable of, through legal or other coercive means, strong-arming the sub-federal levels of government to entirely compensate for reduced transfers by raising consumption taxes, unconventional fiscal policy remains unimplementable. In such an environment, eliminating federal transfers would compel a 3.7 percentage point increase in consumption taxes. The first increase of unconventional fiscal policy consumption taxes to 13.4\% could just barely be met, but none of the requisite subsequent increases could be met, and consumption taxes would remain 5.7 percentage points below the study state level required for unconventional fiscal policy implementation. And the continued growth of consumption taxes, not so much the initial jump, serves to mimic inflation.
+
+\subsection{Pragmatic Concerns Under Horizontal Decentralization}
+
+As with nearly everything in dynamic general equilibrium models, the choice to model decentralized fiscal federalism as a strictly vertical structure, as opposed to both vertical and horizontal, is an oversimplification meant to gain insight for policymaking and general equilibrium feedbacks while retaining tractability. Realistically, the ``state" level consists of 50 states and the District of Columbia, while the ``local" level of government consists of some 40,000 municipal, city, and county governments. The vertical models above have been calibrated to national aggregates and policy rate averages across these horizontal levels of  decentralization. Implementation of unconventional fiscal policy is obstructed by this vertical decentralization alone, as explored above, but further horizontal decentralization raises more obvious and pragmatic issues around implementation. 
+
+There is considerable heterogeneity in consumption tax rates that would make uniformly matching the requisite growth rate of consumption taxes $\{ \tilde{\tau}_1^c < \tilde{\tau}_2^c <, ..., \leq \tilde{\tau}_T^c\}$ impossible. Five states have no sales tax, twelve states have no local sales taxes, and four states have neither state nor local sales taxes. Considerable heterogeneity in tax rates prevails among state or local governments with enacted sales taxes, ranging from a statewide average of 1.76\% in Alaska to 9.45\% in Tennessee. 
+
+%The simplest horizontal expansion of the tri-level model of vertical decentralization such that a federal government represents two states, $S^A$ and $S^B$, each of which contains two municipalities, $L^{A1}, L^{A2}, L^{B1},$ and $L^{B2}$, respectively, is sufficient to capture why this is problematic: Negating the otherwise deflationary impact of discount factor shock with unconventional fiscal policy then requires the following to hold simultaneously
+%\begin{align}
+%\beta \frac{\xi_{t+1}}{\xi_t} = \frac{1 + \tau_{t+1}^{S^A_c}  +\tau_{t+1}^{L^{A1}_c}}{1 + \tau_t^{S^A_c} + \tau_t^{L^{A1}_c}} = \frac{1 + \tau_{t+1}^{S^A_c}  +\tau_{t+1}^{L^{A2}_c}}{1 + \tau_t^{S^A_c} + \tau_t^{L^{A2}_c}} = \frac{1 + \tau_{t+1}^{S^B_c}  +\tau_{t+1}^{L^{B1}_c}}{1 + \tau_t^{S^B_c} + \tau_t^{L^{B1}_c}} = \frac{1 + \tau_{t+1}^{S^B_c}  +\tau_{t+1}^{L^{B2}_c}}{1 + \tau_t^{S^B_c} + \tau_t^{L^{B2}_c}}
+%\end{align}
+%for $t \in \{0,..,T\}$. Equation (43) cannot be satisfied if $ \tau_0^{L^{i,j}_c}$. 
+
+While the unconventional fiscal policy results of Correia et al. (2013) are highly relevant for more centralized models of government retaining all pertinent policy instruments (e.g., Australia), implementability is all but ruled out by mere vertical decentralization of fiscal instruments and budget constraints. Additionally weighing horizontal fiscal heterogeneity, the volume of tax instruments that would have to be coordinated, and the prevalence of state-level constitutional and statutory restrictions on tax rate and revenue increases that would have to be instantaneously surmounted, unconventional fiscal policy is not presently a viable stabilization policy strategy for the United States.
+
+\section{Welfare Implications of Conventional Fiscal Policy}
+
+When implementation of unconventional fiscal policy is infeasible, the welfare implications of vertical fiscal decentralization and related fiscal instruments, not fiscal multipliers, should be guiding policy. As Woodford (2011) elucidates, a positive, elevated government spending multiplier does not necessarily imply that fiscal expansion is welfare improving. That said, the intuition governing liquidity trap fiscal multipliers detailed in Section 2 is highly suggestive of welfare implications. 
+
+Woodford's exposition of the analytics of the government spending multiplier suggests that welfare analysis for optimal fiscal policy should include government spending enter the utility function. Viewing all government spending as pure economic waste is a strong assumption with considerable welfare implications---particularly if public goods enter a utility function concavely and national and local public goods are imperfect substitutes, as seems entirely plausible. For instance, if preventing cutbacks to local public goods (e.g., K-12 and higher eduction) increases welfare more than raising national public good spending (e.g., national defense---or, more apropos to the Recovery Act, hastily approved ``shovel ready" infrastructure projects), federal transfers could be preferable to increased federal spending even if they omit lower output multipliers: With both public goods entering an additively separable concave utility function, the marginal disutility from local public good cutbacks will intuitively exceed the marginal utility gained from expanded national public goods.
+
+While the computational model of Correia et al. (2013) largely adopts functional forms and is calibrated to match that of Christiano, Eichenbaum, and Rebelo (2011), the treatment of government expenditure is an innocuous exception: In a model in which altered government spending is unnecessary to implement a first- or second-best allocation below the zero lower bound, the welfare implications of government spending are superfluous. The utility function used in Christiano, Eichenbaum, and Rebelo (2011), on the other hand, additively includes government spending, replacing equation (1) with:
+\begin{align}
+U(C_t,L_t,\xi_t) =  \xi_t \Big\{ \frac{(C_t^\gamma L_t^{1-\gamma})^{1-\sigma} - 1}{1 - \sigma} + \nu (G_t) \Big\} 
+\end{align}
+where $\nu' >0, \ \nu''<0$.\footnote{The benchmark model for welfare analysis in Woodford (2011) also has government expenditure additively entering the households' utility function. Woodford, however, models utility separably across labor and leisure, so that optimal provision of government expenditure is governed by $g'(G_t) = u'(Y_t - G_t)$.}
+
+Here the representative household ignores the implications of its labor supply and consumption decisions for the level of public good provision---a reasonable assumption with respect to public goods prior to aggregation over 130 million households. Thus the household's Euler equation, labor supply, and capital accumulation optimality conditions (11, 12, and 14) remain unaltered in the ensuing analysis. The benchmark case of fully centralized government substitutes
+\begin{align}
+U(C_t,L_t,\xi_t) =  \xi_t \Big\{  \frac{(C_t^\gamma L_t^{1-\gamma})^{1-\sigma} - 1}{1 - \sigma} + \psi^G \nu (G_t) \Big\}
+\end{align}
+for equation (1), and $\psi^G$ is calibrated assuming the political process has set public good provision to satisfy the Samuelson condition in the steady state. The functional form for $\nu(\cdotp)$ maintains $\nu' >0, \ \nu''<0$, setting $\nu(G_t) = \text{log}(G_t)$ for ease of exposition.\footnote{Given the parameterization of $\psi^G$ to satisfy (48), comparable results go through with other functional forms satisfying $\nu' >0, \ \nu''<0$.} Rearranging the first order condition for (47) with respect to $G_t$ yields the following expression for $\psi^G$
+\begin{align}
+\psi^G = \gamma G_t  (C_t^\gamma L_t^{1-\gamma})^{-\sigma} \Big( \frac{L_t}{C_t} \Big) ^{1-\gamma},
+\end{align}
+which implies $\alpha^G = 0.18$ under the steady state allocation of the benchmark equilibrium under centralized government. 
+
+%That the Samuelson condition be met by the political process is perhaps a strong assumption, but nonetheless a useful benchmark regardless because it enables the ensuing welfare analysis to calculate how much of a wedge between actual and optimal provision of government expenditure is required before federal spending and federal transfers cease to be welfare improving.\footnote{Given the chronic budget deficits run at the federal level, it is also unclear \textit{a priori} if public goods are over-provided or the public is under taxed for an optimal or sub-optimal level of public goods, relative to the Samuelson condition.} 
+
+Welfare implications corresponding to the conventional fiscal policy instruments explored in Section 2 are analyzed before turning to optimal policy and the constrained implementation of unconventional fiscal policy. 
+
+\bigskip
+
+Prior to any conduct of conventional fiscal policy, the inducement of the liquidity trap generates a precipitous, albeit short-lived drop in welfare governed by the construction of the discount factor shock. Relative to the steady state allocation above the zero lower bound, the liquidity trap lowers utility by 6.5\% in the first period and the drop in utility rises to 13.9\% at $T=10$, the final period of the discount factor shock, followed by a sharp reversal. Utility then remains between 0.1\% and 0.2\% lower for the following 8 quarters. Relative to this baseline, the 2\% federal spending shock of section 2.1 is strictly Pareto improving for the 400 quarter duration of the simulation, initially increases utility by 0.2\% (see Figure 14). 
+
+Federal, state, and local public goods are best thought of as entirely distinct commodities rather than substitutes, as their respective consumption expenditures are overwhelmingly fundamentally unlike one another and transfer grants are instead used to encourage increased provision of public goods at lower levels. Under vertical fiscal decentralization, our preferred specification treats local and national public goods as additively separate goods, substituting
+\begin{align}
+U(C_t,L_t,\xi_t) =  \xi_t \Big\{ \frac{(C_t^\gamma L_t^{1-\gamma})^{1-\sigma} - 1}{1 - \sigma} + \psi^{G^F} \nu^{G^F} (G^F_t) + \psi^{G^{SF}} \nu^{G^{SF}} (G^{SF}_t) \Big\}
+\end{align}
+for (47). Maintaining $\nu^{G^S} (\cdotp)  = \nu^{G^{SF}} (\cdotp) = \text{log}(\cdotp)$, the Samuelson condition analogs of (48) are satisfied by calibrating $ \psi^{G^{F}} = \psi^{G^{SF}} = 0.09$.
+As a robustness check, local and national public goods are also modeled as perfect substitutes, such that
+\begin{align}
+U(C_t,L_t,\xi_t) =  \xi_t \Big\{  \frac{(C_t^\gamma L_t^{1-\gamma})^{1-\sigma} - 1}{1 - \sigma} + \psi^G \nu (G^F_t + G^{SF}_t) \Big\},
+\end{align}
+which by design also satisfies (48).\footnote{To our knowledge, there are no empirical estimates of the elasticity of substitution between local and national public goods in the United States. The preferred calibration is based on aggregated preferences supposedly revealed by political outcomes for tax and budget policy. The case of perfect compliments generates a larger welfare gain from federal transfer spending in our preferred model, but this seems an unreasonable modeling assumption: The utility derived from aircraft carrier groups patrolling shipping lanes and K-12 education seem to bare no relation to one another.} In our preferred specifications of (46) and the Great Recession policy (model 2.2.5), both the shock to federal spending and transfers increase are strictly Pareto improving, both increasing first period utility by 0.21\%. (See Figure 14). The cumulative impact on welfare over the entire duration of the simulation of increased federal spending is slightly higher (+7\%) than that of transfers, and considerably lower for an equivalent shock to sub-federal spending (see Figure 15). 
+
+\begin{center}
+\includegraphics[scale=0.8]{SYP_F14}
+\end{center}
+
+The shock to federal transfers boosts welfare by more than an equivalent increase in federal spending when the entire sub-federal fiscal adjustment occurs through spending adjustments (Model 2.2.1). Hence federal transfers would become a more effective stabilization tool than direct federal spending if they could be accompanied by restrictions on sub-federal spending cuts, e.g., $T^{F,SF}_t > \bar{T}^{F,SF}_t : G^{SF}_t > \bar{G}^{SF}_t $. 
+
+Instead modeling public goods as perfect substitutes as in (50) yields essentially comparable results for welfare (see Table 4).
+
+\begin{center}
+\includegraphics[scale=0.8]{SYP_F15}
+\end{center}
+ 
+%\section{Optimal Fiscal Policy Under Fiscal Decentralization}
+%
+%As in Christiano, Eichenbaum, and Robelo 2011),  the alternative ability of the central bank to commit to higher future inflation is ignored, both because it is theoretically well understood and remains difficult to implement in practice.  
+% 
+\section{Conclusion}
+
+This paper demonstrates that vertically decentralized fiscal federalism modeled after the U.S., along with its accompanying array of legal and directional restrictions on fiscal instruments, renders unconventional fiscal policy an inviable policy for the United States at present. This would, however, cease to be true if the federal government enacted a VAT, as the entire impediment to unconventional fiscal policy in the United States is the decentralization of consumption taxes.  The desirability of greater access to centralized fiscal instruments should be considered when thinking about future revenue needs.
+
+If full policy coordination between the federal and sub-federal levels of government were feasible, the states would have a role in liquidity trap stabilization policy. But the results above broadly reinforce that stabilization policy should rest at the federal level when fiscal policy is welfare improving and unconventional fiscal policy cannot be implemented because of decentralized federalism. Barring informational asymmetries regarding endogenous sub-federal feedbacks, the federal government can single-handedly implement conventional optimal fiscal policy. Further research is merited on the stability of revealed political preferences regarding sub-federal discretionary policy responses to adverse fiscal shocks, and endogenous sub-federal budgetary feedbacks at large.
+
+Based on endogenous sub-federal budgetary feedbacks realized during the Great Recession, this paper suggests that the first dollar of direct federal spending is noticeably more effective at demand stabilization than that of transfers to states, but only slightly more effective in increasing welfare. If, on the other hand, the federal government can coerce sub-federal governments to mitigate otherwise impending government spending cuts without changing tax policies---the legally permissible style of transfer coercion, potentially implemented via increased matching grants---federal transfers are just as effective as increased federal spending in boosting output and do more to increase welfare. In either case, diminishing marginal returns to either form of stabilization policy imply an optimal fiscal policy response balancing increases in both when the zero lower bound is binding.
+
+The results above are heavily influenced by the nature of a fundamentals-driven liquidity trap, such as the one induced by a temporary preference shock. Policy implications of extending models of vertically decentralized fiscal federalism to expectations-driven liquidity traps, developed by Mertens and Ravn (2014), is left to future research. The inflationary implications for both federal policy and endogenous sub-federal budgetary feedbacks would essentially be reversed if the aggregate supply schedule were instead steeper than the aggregate demand schedule below the zero lower bound. The net effect of transfer multipliers resulting from the Great Recession policy response would likely be lower than the corresponding multiplier above the zero lower bound, but the degree is not immediately obvious. 
+
+This model fully abstracts away from one pragmatic consideration favoring federal transfers over increased federal spending in a liquidity trap: Implementation timing. When the Recovery Act was being drafted in late 2008 and debated in early 2009, ``timely, targeted, and temporary," was the lodestar for effective fiscal stimulus in policy circles. Transferring federal funds to state governments to simply prevent cuts to existing expenditures can be implemented much faster than increasing federal spending, especially if new procurement or investment must be planned or designed. Legislating increased mandatory outlays through the FMAP formula can be drafted and legislated within a matter of days, and ARRA outlays for transfers to states were among the very first parts of the stimulus bill to take effect. Counter-cyclical adjustments to federal grants to states could even be tied to economic indicators such as the Federal Funds rate, unemployment rate, or output gap estimates in a manner entirely infeasible for new federal investment or procurement. 
+
+This timing appeal is, however, balanced with uncertainties regarding the targeting and timeliness of the sub-federal response, relative to the planner's preferred or expected sub-federal response. Skeptics might also object that increased transfers would remain remain elevated after appropriate, violating the ``temporary" leg of the stool, although this concern has yet to be borne out in Congress's increasingly active experimentation with countercyclical transfer policy. More pertinent is the moral hazard concern that increased federal transfers will discourage states from building up rainy day funds during business cycle expansions (Oates 2005). The trend composition and preference stability of endogenous  sub-federal budgetary policy responses to business cycle downturns, and related questions regarding the merits of federal transfer stabilization policy will be explored in a forthcoming empirical companion to this model of vertically decentralized fiscal federalism.
+
+\pagebreak
+
+\nocite{Barro2011, Bi2013, Oh2012, NCSL2010, Woodford2011, Werning2012b, CBO2013, Eggertsson2004b, Mertens2014, Oliff2012, Carlino2013, Taylor2011, Romer2010c, Oates2005, Chodorow-Reich2012, Boadway1996, Christiano2011, Keen1998, Carlino2013b, Mertens2013c, Per, Ramey2011, Mcnichol2012, Nakamura2014, Conley2013, Holtz-Eakin1994, Shoag2013, Blanchard2002, Shoag2010, Carlino2014, Wilson2012, Farhi2012, Correia2013, Krugman1998a, Jonas2012, Oates1972, Inman2003, Calvo1983, Drau2011, PricewaterhouseCoopers2011, Lucas1971} 
+
+% Leeper2015, Benigno2003, Benigno2012
+
+\bibliography{SYP}
+\bibliographystyle{plain}
+
+\pagebreak
+
+\appendix
+\begin{center}
+\textbf{Appendix A: Legal Restrictions on U.S. Fiscal Instruments}
+\end{center}
+
+\noindent The rise in federal transfers to state governments and use of transfers as a counter-cyclical stabilization tool, outlined in Appendix B, has coincided with the considerable proliferation of statutory and constitutional balanced budget requirements and state taxation and expenditure limitations (TELs), whose adoption blossomed in the late 1970s and again in the early 1990s.\footnote{National Council of State Legislatures ``State Tax and Expenditure Limits---2010" brief, available at \url{http://www.ncsl.org/research/fiscal-policy/state-tax-and-expenditure-limits-2010.aspx}}  Beyond state and local legislatures deliberately hamstringing their policy instruments, the constitution greatly restricts the federal government's use of transfers and grants-in-aid to states.  \bigskip
+
+\noindent \underline{Balanced Budget Amendments} \smallskip \\ 
+Unlike the federal government, almost every state has some sort of balanced budget amendment on general funds operations, introducing an array of sub-federal borrowing constraints missed by fully unified models of federalism. At the onset of the Great Recession in 2008, 43 states required governors' budget proposals to be balanced, 40 required enacted budgets to be balanced, and 37 prohibited general budget deficits from being carrier over, albeit with varying degrees of enforcement mechanisms and exceptions (NCSL 2010). There is abundant evidence that these borrowing constraints were binding for most states during the Great Recession. 
+
+States had to close roughly \$600 billion in budget shortfalls between state fiscal years 2008-2012,\footnote{Unlike the federal fiscal year, which starts  October 1, one quarter before the corresponding calendar year, state fiscal years typically start July 1, two quarters before the corresponding calendar year.} which were met by a combination of spending cuts, discretionary tax increases, increased federal fiscal aid, drawdown of rainy day funds, and other timing and borrowing adjustments (McNichol 2012).\footnote{The cumulative shortfall in McNichol (2012), estimated from a ``current services" counterfactual, is used because that paper provides the only comprehensive breakdown of how state budget shortfalls were closed. Using a slightly different methodology, Oliff, Mai, and Palacios (2012) estimate a comparable \$540 billion shortfall over fiscal years 2009-2013.} While small increases in borrowing were used to cushion the cyclical downturn in revenue, relatively little new debt was issued for consumption smoothing: Only 7\% of states' cumulative \$600 billion budgetary shortfall was closed by policies other than spending cuts, tax increases, drawdown of rainy day funds, and increased federal assistance (see Table 5). Borrowing was one subset of these remaining policy levers, along with timing adjustments, gimmicks, and other miscellaneous policies. 
+
+There was, however, substantial variation in fiscal distress and the degree to which borrowing constraints were binding across the states (see Oliff, Mai, and Palacios 2012 for state-by-state shortfalls).\footnote{This heterogeneity accounts for the ``offsets" in Table 5, which reflect the handful of states cutting taxes and increasing net borrowing (see methodology and definitions in McNichol 2012).}  But substantial fiscal distress was undoubtedly the experience of most states: Of the 50 states and the District of Columbia, 47 closed a budget shortfall in their adopted budget, 44 had to close additional mid-year budget shortfalls, and cumulative shortfalls averaged 29\% of their general funds (see Table 6). In the severely distressed sunbelt states walloped by the housing bubble's imploson, budgetary shortfalls as a share of general funds ranged as high as 65.0\% for Arizona, 52.8\% for California, and 46.8\% in Nevada that year. State revenue forecasts used in setting annual budgets were overwhelmingly missed during the Great Recession, forcing additional mid-year budget cuts and discretionary tax increases, which are often prohibited (Carlino and Inman 2013b)---another clear indication that the ability to consumption smooth was severely curtailed for most states.\footnote{National Association of State Budget Officers, ``The Fiscal Survey of the States," various year, available at: \url{http://www.nasbo.org/publications-data/fiscal-survey-of-the-states}}  Drawdown of rainy day funds were predominantly used to cushion FY2008 and FY2009 budgets, after which the onus of closing budget gaps shifted markedly to spending cuts, while borrowing and ``other" measures instead fell (see Table 5). States' total balances (ending general funds balances plus rainy day funds) peaked at \$69 billion in FY2006, but had fallen to \$30.6 billion by FY2010, with oil-rich Alaska and Texas accounting for the majority of those remaining rainy day funds. The number of states with entirely depleted stabilization funds jumped to 10 in FY2009, 15 in FY2010, and 17 in FY2011, up from just 6 at the end of FY2006.\footnote{National Association of State Budget Officers, ``The Fiscal Survey of the States," various years} 
+
+State and local net borrowing is far less pro-cyclical than federal net borrowing. Net borrowing increased modestly during the Great Recession, but remained relatively in line with pre-recession levels. Note that positive net borrowing is not in itself evidence against budget or borrowing constraints binding: States and localities issue debt specifically earmarked for capital and infrastructure projects, and such debt issuance is almost always excluded from balanced budget requirements, hence modest levels of net borrowing has been common across the business cycle in recent decades (see Appendix Figures A1 and A2.) Restrictions on borrowing are more difficult to characterize across the vast county and municipal level, but similar statutory restrictions are common. Local government net borrowing has closely tracked that of states over the last four decades (see Appendix Figures A1 and A2.) 
+
+\begin{center}
+\includegraphics[scale=0.9]{SYP_FA1}
+\end{center}
+
+\begin{center}
+\includegraphics[scale=0.9]{SYP_FA2}
+\end{center}
+
+The United States saw a particularly sharp pro-cyclical subnational fiscal response to the Great Recession, relative to other advanced economy peers (Jonas 2012).\footnote{State and local consumption expenditure and gross investment turned from a tailwind early in the recession to a considerable headwind in 2009Q4 (as spending cuts ramped up after rainy day funds had been depleted or largely depleted in most states), reducing U.S. real gross domestic product (GDP) growth for 12 of 13 quarters over 2009Q4-2012Q4. Real SLG consumption expenditure and gross investment remains \$109 billion (5.8\%) depressed below it's 2009Q4 peak as of 2015Q1. U.S. real GDP would be \$192 billion higher if SLG consumption expenditure and gross investment had kept pace with inflation and population growth during the recovery. Declining government employment across all levels of federalism has been a sizable drag on overall employment, in rather stark contrast to other recent recessions. Local government employment fell by 601,000 (-4.1\%) between July 2008 and June 2013, and remains down by 518,000 as of April 2015. State government employment fell by 187,000 (-3.6\%) between August 2008 and July 2013, and remains down by 131,000 as of April 2015.} This stems in part from the more decentralized model of federalism in the U.S. coupled with the prevalence of balanced budget requirements, but also a key difference in the origin of such statutory restrictions: Many advanced economy peers have subnational fiscal rules that have been imposed by the national government, and which can be statutorily eased by the central government, as they were during the Great Recession (Jonas 2012). In the U.S., such fiscal rules have been wholly imposed by the states themselves, leaving no equivalent policy lever for temporarily waving or easing them.
+
+Taylor (2011) argues that federal grant transfers were ineffective because state and local governments saved their ARRA stimulus grants and increased transfers to residents, as opposed to boosting consumption and investment expenditure, which would suggest that budget or borrowing constraints were't binding during the Great Recession. But the crux of his argument that SLGs decreased net borrowing during the first two years of ARRA, thus transfer grants were saved, is deeply flawed. The gist of his argument is captured by Figure 4 in that paper, which shows the change in ARRA grants, state and local government purchases, all relative to 2008Q4, the quarter before ARRA first took effect. A modified version is replicated below as Figure A3. Two additional concurrent factors must be noted regarding 2008Q4 as a benchmark: States first turned to their rainy day funds to cushion the cyclical erosion of their general funds, primarily in FY2008 and FY2009 (July 1, 2007 - June 30, 2009), as Table 5 depicts. Drawing down rainy day funds translates to a reduction in lending and thus an increase in net borrowing in flows data. Second, mid-2008 to mid-2009 was the cyclical nadir of state and local governments' non-transfer receipts, and cash strapped states and localities turned to increase borrowing---to the limited extent possible---to cushion the steep erosion of tax receipts during 2008. As Figure A3 depicts, state net borrowing increased markedly during mid-2008 through mid-2009, and then gradually reverted back to roughly normal pre-recession levels. This more nuanced dynamic cannot be captured by looking just at subsequent quarters relative to 2008Q4. Taylor's omission of non-transfer revenue is problematic: As Figure A3 depicts, the changes in net borrowing relative to 2008Q4 is essentially the mirror image of receipts net of federal transfers: Net borrowing decreases toward ``normal" levels exactly in line with depressed revenue bouncing back. 
+
+\begin{center}
+\includegraphics[scale=0.9]{SYP_FA3}
+\end{center}
+
+At the federal level, the only restriction on borrowing is the statutory debt ceiling, which functions in an entirely different manner than state and local borrowing restrictions. The debt ceiling sets a cap on total outstanding debt the Treasury Department can issue, and failure of Congress to either increase that ceiling or repeal the debt ceiling entirely would trigger default to a creditor or violation of contract for payment of goods, services, or entitled benefits. Until recently, the debt ceiling has effectively served as an opportunity for the minority party in Congress to lambast the majority or the president for running chronic budget deficits---and it is entirely consistent with Congress running chronic budget deficits.
+
+\smallskip
+
+\noindent \underline{Tax and Expenditure Limitations} \smallskip \\
+The proliferation of TELs considerably constrains the use of fiscal instruments at the state level in a manner entirely unparalleled at the  federal level. In the aftermath of California's tax revolt and adoption of Proposition 13, fifteen states have enacted legislative super-majority thresholds for adopting tax increases (typically requiring three-fifths, two-thirds, or three-courts of votes in each chamber of the state legislature) and three states require sufficiently large tax changes to be approved by public referendum (any tax increase for Colorado). Many states also limit revenue or expenditure growth, typically by formulaic indexation to personal income growth or inflation. Thirty states were operating under some combination of tax and/or spending limitations as of 2010.\footnote{National Council of State Legislatures ``State Tax and Expenditure Limits---2010" brief.} At minimum, such deliberate hamstringing of policy instruments delays the implementation of state level policy changes relative to federal policy, and can add pressure to cut state government spending or state transfers to local governments in the event of aggregate demand shocks depressing tax receipts. Such tax limitations almost certainly contributed to state spending cuts exceeding tax increases by a ratio of roughly three-to-one in the fiscal retrenchment following the Great Recession (McNichol 2012). \smallskip
+
+\noindent \underline{Directional Limitations on Intergovernmental Grants} \smallskip \\
+As both a practical and legal mater, grants-in-aid flows are generally one-directional, flowing from higher, more centralized levels of government to lower, more decentralized levels of government---and overwhelming to the adjacent level of government. The constitution prohibits Congress from taxing state governments, so all federal lump sum transfers are constrained as downwardly directional. 
+
+Degrees of federal fiscal coercion is exerted through federal transfer policy in the attempt to meet varying federal policy objectives, but as a general matter, Congress can use new transfers to coercively pursue policy objectives, not the threat of reducing transfers. Federal highway grants are contingent on states maintaining legal drinking ages of 21 and Medicaid transfers are contingent on states meeting a plethora of minimal standards for their programs. The Supreme Court also routinely strikes down such efforts of coercion when interpreted as punitive or akin to taxation, the latest high-profile case being \textit{National Federation of Independent Business v. Sebelius}  567 U.S. \_\_\_ (2012), 132 S.Ct 2566, which invalidated a provision of the Patient Protection and Affordable Care Act of 2010 that would have reduced standing Medicaid grants for states declining to participate in that act's Medicaid expansion.\footnote{From Chief Justice John Roberts' majority opinion: \textit{``As we have explained, ``[t]hough Congress' power to legislate under the spending power is broad, it does not include surprising participating States with postacceptance or `retroactive' conditions." Pennhurst, supra, at 25. A State could hardly anticipate that Congress's reservation of the right to ``alter" or ``amend" the Medicaid program included the power to transform it so dramatically."}} This precedent alone would all but guarantee an immediate injunction and eventual Constitutional overturn of any law sharply reducing federal grants, also suggesting that the effective floor for transfers is at minimum half the steady state level of transfers, or $ T^{FS}_t \geq 0.5 \times 0.023 \times \bar{Y} \ \ \forall t=\{0,1,..., \infty\}$, reflecting the roughly half of all federal transfers for Medicaid cost-sharing and other jointly financed health programs.
+
+Some local governments make upward transfers to states, but these pale in comparison to state transfers to localities (see Appendix C). The simplifying assumption that transfers are downward between these levels is unimportant for the results above.
+
+
+\pagebreak
+
+\begin{center}
+\textbf{Appendix B: Intergovernmental Transfers and their Rise as Stimulus}
+\end{center}
+
+The rise of transfers as counter-cyclical stabilization policy has coincided with an increasing interconnectedness of the federal budget to state budgets, granting Congress a policy lever that could be quickly and easily adjusted. Federal transfers to state and local governments have risen markedly over the last half century, with most of the growth arising from matching grants for health care programs, which currently account for roughly half of the over \$600 billion in annual federal grants. According to the Office of Management and Budget, federal grants to sub-federal governments rose from less than 1\% of potential GDP in the late 1950s to nearly 3.5\% in the late 1970s, before being paired back under the Reagan administration. 
+
+The creation of Medicaid in 1965, subsequent expansions, and the creation of the State Children's Health Insurance Program (SCHIP) in 1997 have been the major contributors of this growth. Medicaid and SCHIP are run by states, but are jointly financed with federal grants determined annually by the FMAP and Enhanced FMAP formulas---a key policy lever for quickly adjusting transfers, as used in the Recovery Act. Following the creation of SCHIP, federal grants to state and local governments have averaged 3.2\% of potential GDP over FY1997-2015, and reached a record 3.9\% in FY2010 as ARRA temporarily boosted Federal Medical Assistance Percentages (FMAP) rates for funding Medicaid. The remaining half of federal grants to state and local government are predominantly for income security programs, eduction expenditure, and transportation investment, the vast majority of which are discretionary lump-sum grants, as opposed to mandatory matching grants common to health programs. 
+
+Congress has become more responsive to downturns in state and local government (SLG)  finances in recent decades, first providing countercyclical federal assistance in response to the 1973-1975 recession, and then again in the 1981-1982, 2001, and 2007-2009 recession, as documented by Carlino and Inman (2013b).\footnote{Motivated by the 1973-1975 recession, the Re-authorization of Comprehensive Employment Training Act of 1973, Public Works Employment Act of 1976, and Economic Stimulus Appropriations Act of 1977 included increased transfers to states, as did the Emergency Jobs Act of 1983 for the 1981-1982 recession, the Jobs and Growth Tax Relief Reconciliation Act of 2003 for the 2001 recession, and the American Recovery and Reinvestment Act of 2009 and the FAA Air Transportation Modernization and Safety Improvement Act of 2010 for the 2007-2009, as documented by Carlino and Inman (2013b).}  The expanded transfers enacted during the Great Recession were of an unprecedented size as a share of U.S. GDP: Congress transferred an additional \$318 billion to state governments under the, and provided an additional \$26 billion to state governments under the FAA Air Transportation Modernization and Safety Improvement Act of 2010. Federal grants-in-aid were primarily grants for supporting education expenditure, increased Medicaid matching rates, and grants for infrastructure spending.
+
+\pagebreak
+
+\begin{center}
+\textbf{Appendix C: Calibrating U.S. Fiscal Decentralization}
+\end{center}
+
+There is an extensive literature on horizontal fiscal federalism, notably resident mobility and externalities between states or localities. These concerns are largely abstracted away from, as federal stabilization policy has been characterized by increasing transfers to all 50 states and the District. Consequently, the size and effective policy instrument rates of the sub-federal sector should be thought of as integrating over the 50 states and the District of Columbia.\footnote{ The U.S. territories, Commonwealth of Puerto Rico, and the Northern Mariana Islands are excluded from ``U.S. estimates" in the NIPAs. There are some federal grants to these territories, but far less fiscal integration. For instance, Medicaid funding grants are capped as opposed to following the FMAP formula for U.S. states and the District of Columbia.} Similarly, the local government sector should be thought of as integrating over the roughly 40,000 municipal, city, and county governments in the United States. 
+
+All calibration targets are designed to reflect historical averages from the BEA NIPA Government Current Receipts and Expenditures accounts as shares of CBO's estimates of potential GDP, averaged over the two decades prior to the Great Recession (1988-2007). The results presented above are robust to similar calibrations based on 15 or 25 year averages leading up to 2007.
+
+Across federal, state, and local levels of government, combined public sector expenditures have averaged 32.4\% of potential GDP over 1988-2007, comprised of transfers to persons equivalent to roughly 10.7\% of GDP and government expenditures (net of transfers to persons) of roughly 21.7\% of potential GDP.  Expenditures of the federal government averaged 21.0\% of potential GDP over this period, comprised of transfers to persons equivalent to 8.0\% of potential GDP, transfers to state governments equivalent to 2.3\% of potential GDP, and expenditures (net of transfers) of 10.7\% of GDP. The combined state and local sector accounts for remaining transfers to persons equivalent to 2.7\% of potential GDP, with 2.4 percentage points coming from state governments and 0.3 percentage points from local governments. State and local government expenditure net of transfers was equivalent to 11.4\% of GDP, with 3.6 percentage points provisioned by state governments to 7.9 percentage points attributable to local governments. 
+
+Federal grants to state and local governments flow almost entirely to state governments, averaging 2.1\% of potential GDP over this period, as opposed to less than 0.2\% of potential GDP flowing to local governments. Moving down a ring of federalism, states transferred on net an amount to local governments equivalent to 3.0\% of potential GDP. Local governments do make a handful of transfers upwards to state governments, but these averaged just 0.1\% of potential GDP, dwarfed by state transfers to local governments equivalent to 3.1\% of potential GDP.
+
+On the revenue side, the federal government collected current receipts equivalent to 18.2\% of potential GDP over this period, overwhelming coming from individual income taxes (10.9 percentage points) and payroll taxes (7.9 percentage points). Corporate taxes accounted for 1.9\% of potential GDP and excise taxes another 0.6\%. Remaining revenue sources all account for minuscule shares, such as receipts from import duties, profits of the Federal Reserve System, interest income, and taxes from the rest of the world.
+
+The combined state and local government sector collected current receipts equivalent to 12.7\% of potential GDP over this period. The largest sources were sales taxes (3.1\% of potential GDP), property taxes (2.6\%), federal grants in aid (2.3\%), personal income taxes (1.9\%), and income on assets (0.8\%). Nearly half of all sub-federal receipts were from total taxes on production (sales, property, and other taxes), with receipts dwarfing those of federal taxes on production by more than seven fold. Corporate income tax receipts were only 0.4\% of potential GDP, less than one-fifth that collected by the federal government. 
+
+At the state level, current receipts equivalent to 8.4\% of potential GDP over this period predominantly came from sales taxes (2.5\% of potential GDP), federal grants in aid (2.1\%), personal income taxes (1.7\%), and income on assets (0.5\%). At the local level, current receipts equivalent to 7.7 \% of potential GDP over this period predominantly came from state grants in aid (3.1\%), property taxes (2.6\%), sales taxes (0.6\%), and income on assets (0.4\%). Personal income taxes, on the other hand, account for just 2\% of local government current receipts (averaging less than 0.2\% of potential GDP).
+
+Net of transfers, government expenditure is comprised of consumption expenditures, gross investment, consumption of fixed capital, and interest payments and subsidies. Broadly speaking, all three levels of government are providing public goods: National public goods, such as providing for defense, state level public goods such as state university systems, and local public goods, such as K-12 education.
+
+Constant steady state tax rates are set at $\bar{\tau}^c = 0.096$ for consumption taxes, $\bar{\tau}^k = 0.24$ for capital income taxes, and $\bar{\tau}^n = 0.36$ for net national labor income taxes. The consumption tax is parameterized to match the average of state and local government production taxes as a share of personal consumption expenditure. Because housing is not explicitly modeled, local property taxes are treated (with a bit of hand waving) equivalently as direct consumption taxes, with owners paying tax on their implicit consumption of their housing asset, and the tax liability of rental properties being passed along to renters. The average combined state and local sales tax rates for 2015, weighted by state personal consumption expenditure in 2012 (the most recent year available), is a comparable 7.2\%.\footnote{Based on Tax Foundation sales tax data for 2015, available at: \url{http://taxfoundation.org/article/state-and-local-sales-tax-rates-2015}} The difference stems from the adjustment for local property taxes being treated as consumption taxes, and the aggregate rate is based on the NIPAs. The capital income tax is set to the average marginal rate on long-term capital gains and dividends.\footnote{Based on time series from the Tax Policy Center, available at: \url{http://www.taxpolicycenter.org/taxfacts/displayafact.cfm?Docid=161}} The labor income parameterization comes from the average marginal tax rates calculated in Barro and Redlick (2011), combining federal and state income taxes and federal payroll taxes. 
+
+Either state and local general sales taxes or state and local income taxes are deductible from federal income tax for itemizing filers, who account for the preponderance of federal income tax receipts. Deducting state income taxes yields the higher benefit for the vast majority of itemizers, according to Intuit's Turbo Tax tax-filing software guides. Of the 41 states with income taxes, only six allow for deductibility of federal income taxes, so deductibility in that direction is ignored.
+
+
+
+\newpage
+
+\begin{table}[p]
+\caption{Model Parameters for Correia et al. (2013) Extension}
+  \centering
+  \begin{tabular}{lld{2.5}d{2.5}d{2.5}d{2.5}}
+    \hline \hline
+    & & \multicolumn{1}{c}{Centralized} & \multicolumn{1}{c}{Decentralized: $G^{SF}$} & \multicolumn{1}{c}{Decentralized: $\tau^c$} & \multicolumn{1}{c}{Decentralized: $\tau^{N_s}$}  \\ 
+    \hline 
+    \textbf{\ \ \ \ Benchmark} \\
+    $\gamma$ &&\multicolumn{1}{c}{0.29} &\multicolumn{1}{c}{0.29} 
+    &\multicolumn{1}{c}{0.29} &\multicolumn{1}{c}{0.29} \\
+    $\sigma$ &&\multicolumn{1}{c}{2} &\multicolumn{1}{c}{2} 
+    &\multicolumn{1}{c}{2} &\multicolumn{1}{c}{2} \\
+    $\beta$ &&\multicolumn{1}{c}{0.99} &\multicolumn{1}{c}{0.99} 
+    &\multicolumn{1}{c}{0.99} &\multicolumn{1}{c}{0.99} \\
+    $\hat{\beta}$ &&\multicolumn{1}{c}{1.01} &\multicolumn{1}{c}{1.01} 
+    &\multicolumn{1}{c}{1.01} &\multicolumn{1}{c}{1.01} \\
+    $\delta$ &&\multicolumn{1}{c}{0.02} &\multicolumn{1}{c}{0.02} 
+    &\multicolumn{1}{c}{0.02} &\multicolumn{1}{c}{0.02} \\
+    $\theta$ &&\multicolumn{1}{c}{7} &\multicolumn{1}{c}{7} 
+    &\multicolumn{1}{c}{7} &\multicolumn{1}{c}{7} \\
+    $\alpha_F$ &&\multicolumn{1}{c}{0.33} &\multicolumn{1}{c}{0.33} 
+    &\multicolumn{1}{c}{0.33} &\multicolumn{1}{c}{0.33} \\
+    $\alpha$ &&\multicolumn{1}{c}{0.85} &\multicolumn{1}{c}{0.85} 
+    &\multicolumn{1}{c}{0.85} &\multicolumn{1}{c}{0.85} \\
+    $\sigma_I$ &&\multicolumn{1}{c}{17} &\multicolumn{1}{c}{17} 
+    &\multicolumn{1}{c}{17} &\multicolumn{1}{c}{17} \\
+    $\phi_1$ &&\multicolumn{1}{c}{1.5} &\multicolumn{1}{c}{1.5} 
+    &\multicolumn{1}{c}{1.5} &\multicolumn{1}{c}{1.5} \\
+    $\phi_2$ &&\multicolumn{1}{c}{0} &\multicolumn{1}{c}{0} 
+    &\multicolumn{1}{c}{0} &\multicolumn{1}{c}{0} \\
+    $\rho_R$ &&\multicolumn{1}{c}{0} &\multicolumn{1}{c}{0} 
+    &\multicolumn{1}{c}{0} &\multicolumn{1}{c}{0} \\
+    $\Omega^G$ &&\multicolumn{1}{c}{0.22} &\multicolumn{1}{c}{--} 
+    &\multicolumn{1}{c}{--} &\multicolumn{1}{c}{--} \\
+    $\rho_G$ &&\multicolumn{1}{c}{0.8} &\multicolumn{1}{c}{--} 
+    &\multicolumn{1}{c}{--} &\multicolumn{1}{c}{--} \\
+    $\bar{\tau_c}$ &&\multicolumn{1}{c}{0.096} &\multicolumn{1}{c}{0.096} 
+    &\multicolumn{1}{c}{--} &\multicolumn{1}{c}{0.096} \\
+    $\bar{\tau_n}$ &&\multicolumn{1}{c}{0.36} &\multicolumn{1}{c}{--} 
+    &\multicolumn{1}{c}{--} &\multicolumn{1}{c}{--} \\
+    $\bar{\tau^k}$ &&\multicolumn{1}{c}{0.24} &\multicolumn{1}{c}{0.24} 
+    &\multicolumn{1}{c}{0.24} &\multicolumn{1}{c}{0.24} \\
+    $\bar{\tau^d}$ &&\multicolumn{1}{c}{0} &\multicolumn{1}{c}{0} 
+    &\multicolumn{1}{c}{0} &\multicolumn{1}{c}{0} \\
+    $\psi^{G}$ &&\multicolumn{1}{c}{0.18} &\multicolumn{1}{c}{0.18} 
+    &\multicolumn{1}{c}{0.18} &\multicolumn{1}{c}{0.18} \\
+    \hline
+    \textbf{Decentralized:} \\ 
+    \textbf{\ \ \ \ Bi-Level} \smallskip \\
+    $\bar{T}^{F,SF}$ &&\multicolumn{1}{c}{--} &\multicolumn{1}{c}{0.023} 
+    &\multicolumn{1}{c}{0.023} &\multicolumn{1}{c}{0.023} \\ 
+    $\Omega^F$ &&\multicolumn{1}{c}{--} &\multicolumn{1}{c}{0.11} 
+    &\multicolumn{1}{c}{0.11} &\multicolumn{1}{c}{0.11} \\
+    $\Omega^{SF}$ &&\multicolumn{1}{c}{--} &\multicolumn{1}{c}{0.11} 
+    &\multicolumn{1}{c}{0.11} &\multicolumn{1}{c}{0.11} \\
+    $\rho_{G^F}$ &&\multicolumn{1}{c}{--} &\multicolumn{1}{c}{0.8} 
+    &\multicolumn{1}{c}{0.8} &\multicolumn{1}{c}{0.8} \\
+    $\rho_{G^{SF}}$ &&\multicolumn{1}{c}{--} &\multicolumn{1}{c}{0.8} 
+    &\multicolumn{1}{c}{0.8} &\multicolumn{1}{c}{0.8} \\
+    $\bar{\tau}^{n_F}$ &&\multicolumn{1}{c}{--} &\multicolumn{1}{c}{0.31} 
+    &\multicolumn{1}{c}{--} &\multicolumn{1}{c}{0.31} \\
+    $\bar{\tau}^{n_{SF}}$ &&\multicolumn{1}{c}{--} &\multicolumn{1}{c}{0.044} 
+    &\multicolumn{1}{c}{0.044} &\multicolumn{1}{c}{--} \\ 
+    $\psi^{G^F}$ &&\multicolumn{1}{c}{--} &\multicolumn{1}{c}{0.09} 
+    &\multicolumn{1}{c}{0.09} &\multicolumn{1}{c}{0.09} \\
+    $\psi^{G^{SF}}$ &&\multicolumn{1}{c}{--} &\multicolumn{1}{c}{0.09} 
+    &\multicolumn{1}{c}{0.09} &\multicolumn{1}{c}{0.09} \\
+    \hline 
+    \textbf{Decentralized:} \\ 
+    \textbf{\ \ \ \ Tri-Level} \smallskip \\
+    $\bar{T}^{S,L}$ &&\multicolumn{1}{c}{--} &\multicolumn{1}{c}{0.03} 
+    &\multicolumn{1}{c}{0.03} &\multicolumn{1}{c}{0.03} \\ 
+    $\Omega^S$ &&\multicolumn{1}{c}{--} &\multicolumn{1}{c}{0.075} 
+    &\multicolumn{1}{c}{0.075} &\multicolumn{1}{c}{0.075} \\
+    $\Omega^{L}$ &&\multicolumn{1}{c}{--} &\multicolumn{1}{c}{0.035} 
+    &\multicolumn{1}{c}{0.035} &\multicolumn{1}{c}{0.035} \\
+    $\bar{\tau}^{n_{S}}$ &&\multicolumn{1}{c}{--} &\multicolumn{1}{c}{0.044} 
+    &\multicolumn{1}{c}{0.044} &\multicolumn{1}{c}{--} \\
+    $\bar{\tau}^{c_S}$ &&\multicolumn{1}{c}{--} &\multicolumn{1}{c}{0.076} 
+    &\multicolumn{1}{c}{--} &\multicolumn{1}{c}{0.076} \\
+    $\bar{\tau}^{c_L}$ &&\multicolumn{1}{c}{--} &\multicolumn{1}{c}{0.02} 
+    &\multicolumn{1}{c}{--} &\multicolumn{1}{c}{0.02} \\
+    \hline \hline
+  \end{tabular}
+\end{table}
+
+\newpage
+
+\begin{table}[p]
+\caption{Fiscal Multipliers in Centralized and Decentralized Models of Fiscal Federalism}
+  \centering
+  \begin{tabular}{lld{2.5}d{2.5}d{2.5}d{2.5}}
+    \hline \hline
+    & & \multicolumn{1}{c}{Federal Spending } & \multicolumn{1}{c}{Federal Transfers} & \multicolumn{1}{c}{Sub-federal Spending} & \multicolumn{1}{c}{}  \\ 
+    \hline \smallskip 
+    \textbf{Above ZLB}: \\
+    Centralized &&\multicolumn{1}{c}{0.960} &\multicolumn{1}{c}{NA} 
+    &\multicolumn{1}{c}{NA} \\
+    Decentralized: $G^{SF}$ &&\multicolumn{1}{c}{0.999} &\multicolumn{1}{c}{0.998} 
+    &\multicolumn{1}{c}{NA} \\
+    Decentralized: $\tau^c$ &&\multicolumn{1}{c}{0.992} &\multicolumn{1}{c}{0.824} 
+    &\multicolumn{1}{c}{0.169} \\
+    Decentralized: $\tau^{n_{SF}}$ &&\multicolumn{1}{c}{0.974} &\multicolumn{1}{c}{0.357} 
+    &\multicolumn{1}{c}{0.626} \\ 
+    Decentralized: $T^{F,SF}$ &&\multicolumn{1}{c}{0.960} &\multicolumn{1}{c}{NA} 
+    &\multicolumn{1}{c}{0.960} \\ 
+    Decentralized: GR Mix &&\multicolumn{1}{c}{0.993} &\multicolumn{1}{c}{0.853} 
+    &\multicolumn{1}{c}{0.175} \smallskip \\
+    \hline \smallskip 
+    \textbf{Below ZLB}: \\
+    Centralized &&\multicolumn{1}{c}{1.276} &\multicolumn{1}{c}{NA} 
+    &\multicolumn{1}{c}{NA} \\
+    Decentralized: $G^{SF}$ &&\multicolumn{1}{c}{1.348} &\multicolumn{1}{c}{1.344} 
+    &\multicolumn{1}{c}{NA} \\
+    Decentralized: $\tau^c$ &&\multicolumn{1}{c}{1.326} &\multicolumn{1}{c}{0.916} 
+    &\multicolumn{1}{c}{0.413} \\
+    Decentralized: $\tau^{n_{SF}}$ &&\multicolumn{1}{c}{1.252} &\multicolumn{1}{c}{-0.388} 
+    &\multicolumn{1}{c}{1.570} \\ 
+    Decentralized: $T^{F,SF}$ &&\multicolumn{1}{c}{1.275} &\multicolumn{1}{c}{NA} 
+    &\multicolumn{1}{c}{1.275} \\ 
+    Decentralized: GR Mix &&\multicolumn{1}{c}{1.336} &\multicolumn{1}{c}{1.130} 
+    &\multicolumn{1}{c}{0.410} \\ 
+    \hline \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}[p]
+\caption{Percent Change in Multipliers Moving from Above ZLB to Below ZLB}
+  \centering
+  \begin{tabular}{lld{2.5}d{2.5}d{2.5}d{2.5}}
+    \hline \hline
+    & & \multicolumn{1}{c}{Federal Spending } & \multicolumn{1}{c}{Federal Transfers} & \multicolumn{1}{c}{Sub-federal Spending} & \multicolumn{1}{c}{}  \\ 
+    \hline \smallskip 
+    Centralized &&\multicolumn{1}{c}{+33.0\%} &\multicolumn{1}{c}{NA} 
+    &\multicolumn{1}{c}{NA} \\
+    Decentralized: $G^{SF}$ &&\multicolumn{1}{c}{+34.9\%} &\multicolumn{1}{c}{+35.7\%} 
+    &\multicolumn{1}{c}{NA} \\
+    Decentralized: $\tau^c$ &&\multicolumn{1}{c}{+33.6\%} &\multicolumn{1}{c}{+11.3\%} 
+    &\multicolumn{1}{c}{+144.2\%} \\
+    Decentralized: $\tau^{n_{SF}}$ &&\multicolumn{1}{c}{+28.6\%} &\multicolumn{1}{c}{-208.8\%} 
+    &\multicolumn{1}{c}{+150.7\%} \\ 
+    Decentralized: $T^{F,SF}$ &&\multicolumn{1}{c}{+32.7\%} &\multicolumn{1}{c}{NA} 
+    &\multicolumn{1}{c}{+32.7\%} \\ 
+    Decentralized: GR Mix &&\multicolumn{1}{c}{+34.5\%} &\multicolumn{1}{c}{+32.5\%} 
+    &\multicolumn{1}{c}{+133.8\%} \smallskip \\
+    \hline \hline
+  \end{tabular}
+\end{table}
+
+
+\newpage
+
+\begin{table}[p]
+\caption{Welfare Implications of Fiscal Decentralization and Policy Actions \\ (Change in first period utility)}
+  \centering
+  \begin{tabular}{lld{2.5}d{2.5}d{2.5}d{2.5}}
+    \hline \hline
+    & & \multicolumn{1}{c}{Federal Spending } & \multicolumn{1}{c}{Federal Transfers} & \multicolumn{1}{c}{Sub-federal Spending} & \multicolumn{1}{c}{}  \\ 
+    \hline \smallskip 
+    Centralized &&\multicolumn{1}{c}{+0.22\%} &\multicolumn{1}{c}{NA} 
+    &\multicolumn{1}{c}{NA} \smallskip \\ \hline 
+    \textbf{Preferred Specification}: \\
+    Decentralized: $G^{SF}$ &&\multicolumn{1}{c}{+0.21\%} &\multicolumn{1}{c}{+0.26\%} 
+    &\multicolumn{1}{c}{NA} \\
+    Decentralized: $\tau^c$ &&\multicolumn{1}{c}{+0.21\%} &\multicolumn{1}{c}{+0.20\%} 
+    &\multicolumn{1}{c}{+0.04\%} \\
+    Decentralized: $\tau^{n_{SF}}$ &&\multicolumn{1}{c}{+0.19\%} &\multicolumn{1}{c}{-0.04\%} 
+    &\multicolumn{1}{c}{+0.23\%} \\ 
+    Decentralized: $T^{F,SF}$ &&\multicolumn{1}{c}{+0.20\%} &\multicolumn{1}{c}{NA} 
+    &\multicolumn{1}{c}{+0.20\%} \\ 
+    Decentralized: GR Mix &&\multicolumn{1}{c}{+0.21\%} &\multicolumn{1}{c}{+0.21\%} 
+    &\multicolumn{1}{c}{+0.04\%} \smallskip \\ \hline
+    \textbf{Perfect Substitutes}: \\
+    Decentralized: $G^{SF}$ &&\multicolumn{1}{c}{+0.26\%} &\multicolumn{1}{c}{+0.26\%} 
+    &\multicolumn{1}{c}{NA} \\
+    Decentralized: $\tau^c$ &&\multicolumn{1}{c}{+0.23\%} &\multicolumn{1}{c}{+0.22\%} 
+    &\multicolumn{1}{c}{+0.01\%} \\
+    Decentralized: $\tau^{n_{SF}}$ &&\multicolumn{1}{c}{+0.21\%} &\multicolumn{1}{c}{-0.05\%} 
+    &\multicolumn{1}{c}{+0.25\%} \\ 
+    Decentralized: $T^{F,SF}$ &&\multicolumn{1}{c}{+0.22\%} &\multicolumn{1}{c}{NA} 
+    &\multicolumn{1}{c}{+0.22\%} \\ 
+    Decentralized: GR Mix &&\multicolumn{1}{c}{+0.25\%} &\multicolumn{1}{c}{+0.22\%} 
+    &\multicolumn{1}{c}{+0.03\%} \smallskip \\
+    \hline \hline
+  \end{tabular}
+\end{table}
+
+
+\newpage
+
+\begin{table}[p]
+\caption{Cumulative State Budget Shortfalls and Response Measures}
+  \centering
+  \begin{tabular}{lld{2.5}d{2.5}d{2.5}d{2.5}d{2.5}d{2.5}d{2.5}}
+    \hline \hline
+   \multicolumn{1}{c}{Fiscal Year} & \multicolumn{1}{c}{2008} & \multicolumn{1}{c}{2009} & \multicolumn{1}{c}{2010} &  \multicolumn{1}{c}{2011} & \multicolumn{1}{c}{2012} & \multicolumn{1}{c}{Total} \\ 
+    \hline \smallskip 
+     \textbf{\$Billions} \\ \smallskip
+    Current Services Gap Closed &\multicolumn{1}{c}{14.2} &\multicolumn{1}{c}{95.8} 
+    &\multicolumn{1}{c}{168.8} &\multicolumn{1}{c}{147.2} &\multicolumn{1}{c}{169.3} 
+    &\multicolumn{1}{c}{595.3} \\ 
+    Spending Cuts &\multicolumn{1}{c}{0} &\multicolumn{1}{c}{29.9} 
+    &\multicolumn{1}{c}{61.0} &\multicolumn{1}{c}{65.4} &\multicolumn{1}{c}{134.8} 
+    &\multicolumn{1}{c}{291.1} \\
+    ARRA Aid &\multicolumn{1}{c}{0} &\multicolumn{1}{c}{29.1} 
+    &\multicolumn{1}{c}{62.1} &\multicolumn{1}{c}{57.7} &\multicolumn{1}{c}{6.6} 
+    &\multicolumn{1}{c}{155.6} \\    Revenue Increases &\multicolumn{1}{c}{9.8} &\multicolumn{1}{c}{5.8} 
+    &\multicolumn{1}{c}{35.7} &\multicolumn{1}{c}{27.9} &\multicolumn{1}{c}{21.4} 
+    &\multicolumn{1}{c}{100.8} \\ 
+    Rainy Day Reserves &\multicolumn{1}{c}{16.4} &\multicolumn{1}{c}{23.3} 
+    &\multicolumn{1}{c}{4.4} &\multicolumn{1}{c}{6.1} &\multicolumn{1}{c}{6.3} 
+    &\multicolumn{1}{c}{56.5} \\
+    Other&\multicolumn{1}{c}{3.3} &\multicolumn{1}{c}{17.7} 
+    &\multicolumn{1}{c}{12.0} &\multicolumn{1}{c}{3.3} &\multicolumn{1}{c}{8.9} 
+    &\multicolumn{1}{c}{45.3} \\ 
+    Offsets&\multicolumn{1}{c}{-15.3} &\multicolumn{1}{c}{	-10.0} 
+    &\multicolumn{1}{c}{-6.5} &\multicolumn{1}{c}{-13.4} &\multicolumn{1}{c}{-8.8} 
+    &\multicolumn{1}{c}{-54.0}  \\ \hline  \smallskip
+    \textbf{\% of Gap Closed (Net of Offsets)} \\ \smallskip
+    Spending Cuts &\multicolumn{1}{c}{0.0\%} &\multicolumn{1}{c}{28.2\%} 
+    &\multicolumn{1}{c}{34.8\%} &\multicolumn{1}{c}{40.8\%} &\multicolumn{1}{c}{75.7\%} 
+    &\multicolumn{1}{c}{44.8\%} \\
+    ARRA Aid &\multicolumn{1}{c}{0.0\%} &\multicolumn{1}{c}{27.5\%} 
+    &\multicolumn{1}{c}{35.4\%} &\multicolumn{1}{c}{36.0\%} &\multicolumn{1}{c}{3.7\%} 
+    &\multicolumn{1}{c}{24.0\%} \\    
+    Revenue Increases &\multicolumn{1}{c}{33.2\%} &\multicolumn{1}{c}{5.5\%} 
+    &\multicolumn{1}{c}{20.4\%} &\multicolumn{1}{c}{17.4\%} &\multicolumn{1}{c}{12.0\%} 
+    &\multicolumn{1}{c}{15.5\%} \\ 
+    Rainy Day Reserves &\multicolumn{1}{c}{55.4\%} &\multicolumn{1}{c}{22.0\%} 
+    &\multicolumn{1}{c}{2.5\%} &\multicolumn{1}{c}{3.8\%} &\multicolumn{1}{c}{3.6\%} 
+    &\multicolumn{1}{c}{8.7\%} \\
+    Other&\multicolumn{1}{c}{11.3\%} &\multicolumn{1}{c}{16.7\%} 
+    &\multicolumn{1}{c}{6.8\%} &\multicolumn{1}{c}{2.1\%} &\multicolumn{1}{c}{5.0\%} 
+    &\multicolumn{1}{c}{7.0\%}  \\ \hline \smallskip
+    \textbf{\% of Closed Net of Offsets, ARRA} \\ 
+    Spending Cuts &\multicolumn{1}{c}{0.0\%} &\multicolumn{1}{c}{38.9\%} 
+    &\multicolumn{1}{c}{53.9\%} &\multicolumn{1}{c}{63.7\%} &\multicolumn{1}{c}{78.6\%} 
+    &\multicolumn{1}{c}{59.0\%} \\
+    Revenue Increases &\multicolumn{1}{c}{33.2\%} &\multicolumn{1}{c}{7.6\%} 
+    &\multicolumn{1}{c}{31.6\%} &\multicolumn{1}{c}{27.2\%} &\multicolumn{1}{c}{12.5\%} 
+    &\multicolumn{1}{c}{20.4\%} \\ 
+    Rainy Day Reserves &\multicolumn{1}{c}{55.4\%} &\multicolumn{1}{c}{30.4\%} 
+    &\multicolumn{1}{c}{3.9\%} &\multicolumn{1}{c}{5.9\%} &\multicolumn{1}{c}{3.7\%} 
+    &\multicolumn{1}{c}{11.5\%} \\
+    Other&\multicolumn{1}{c}{11.3\%} &\multicolumn{1}{c}{23.1\%} 
+    &\multicolumn{1}{c}{10.6\%} &\multicolumn{1}{c}{3.2\%} &\multicolumn{1}{c}{5.2\%} 
+    &\multicolumn{1}{c}{9.2\%} \\  \hline \hline
+    Source: McNichol (2012)
+  \end{tabular}
+\end{table}
+
+\begin{table}[p]
+\caption{Number of States Facing Budgetary Shortfalls}
+  \centering
+  \begin{tabular}{lld{2.5}d{2.5}d{2.5}d{2.5}d{2.5}d{2.5}}
+    \hline \hline
+   \multicolumn{1}{c}{Fiscal Year}  & \multicolumn{1}{c}{2009} & \multicolumn{1}{c}{2010} &  \multicolumn{1}{c}{2011} & \multicolumn{1}{c}{2012} & \multicolumn{1}{c}{2013} \\ 
+    \hline \smallskip 
+    \textbf{Number of States} \\ \smallskip
+    Adopted Budget Closed a Shortfall  &\multicolumn{1}{c}{29} &\multicolumn{1}{c}{47} 
+    &\multicolumn{1}{c}{47} &\multicolumn{1}{c}{43} &\multicolumn{1}{c}{32} \\ 
+    Additional Mid-Year Shortfall &\multicolumn{1}{c}{44} &\multicolumn{1}{c}{44} 
+    &\multicolumn{1}{c}{13} &\multicolumn{1}{c}{10} &\multicolumn{1}{c}{--}  \\
+    Total Shortfall as \% of General Fund &\multicolumn{1}{c}{15.2\%} &\multicolumn{1}{c}{29.0\%} 
+    &\multicolumn{1}{c}{19.9\%} &\multicolumn{1}{c}{11.3\%} &\multicolumn{1}{c}{9.5\%}  \\
+    \hline \hline
+    Source: Oliff, Mai, and Palacios (2012) 
+  \end{tabular}
+\end{table}
+
+%\end{appendix}
+
+\end{document}
+
